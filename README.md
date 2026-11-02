@@ -23,8 +23,9 @@ File Struct(Anish)/
 │   ├── notifications.html  # Notice Board
 │   └── ...                 # Loan and Service detail pages
 ├── app.py                  # Core Flask application and Supabase integration
+├── pyproject.toml          # Vercel Backend Framework configuration & dependencies
 ├── requirements.txt        # Python package dependencies
-├── vercel.json             # Vercel deployment and routing configuration
+├── vercel.json             # Vercel deployment configuration
 ├── package.json            # Project manifest
 ├── .python-version         # Runtime version specification (Python 3.12)
 ├── .env.example            # Environment variables reference
@@ -37,18 +38,19 @@ File Struct(Anish)/
 
 ### Option 1: Deploy via Vercel Dashboard (Git)
 
-1. Push this project to your GitHub, GitLab, or Bitbucket repository.
+1. Push this project to your GitHub repository.
 2. Go to [Vercel](https://vercel.com/) and click **Add New** > **Project**.
 3. Import your repository.
-4. Vercel automatically detects the Python runtime from `requirements.txt` and `vercel.json`.
-5. *(Optional)* Under **Environment Variables**, you can configure:
+4. If your project files are inside the `File Struct(Anish)` folder in your repo, ensure Vercel's **Root Directory** setting is set to `File Struct(Anish)`.
+5. Vercel automatically detects the Python Flask framework from `pyproject.toml` and `requirements.txt`.
+6. *(Optional)* Under **Environment Variables**, you can configure:
    - `SECRET_KEY`
    - `ADMIN_USERNAME`
    - `ADMIN_PASSWORD`
    - `SUPABASE_URL`
    - `SUPABASE_KEY`
    *(All variables have secure default fallbacks built into the project).*
-6. Click **Deploy**.
+7. Click **Deploy**.
 
 ---
 

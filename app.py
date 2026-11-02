@@ -35,6 +35,16 @@ app = Flask(
     static_folder=static_dir
 )
 
+# Trust proxy headers from Vercel edge
+from werkzeug.middleware.proxy_fix import ProxyFix
+app.wsgi_app = ProxyFix(
+    app.wsgi_app,
+    x_for=1,
+    x_proto=1,
+    x_host=1,
+    x_prefix=1,
+)
+
 app.secret_key = os.getenv("SECRET_KEY", "anish_bank_secret_2026")
 
 # Admin login credentials

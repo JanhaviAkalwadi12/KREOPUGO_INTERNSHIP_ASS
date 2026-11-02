@@ -1,0 +1,14 @@
+[project]
+name = "file-struct-anish"
+version = "1.0.0"
+description = "Anish Souharda Cooperative Bank - Finalized Student Project"
+requires-python = ">=3.12"
+dependencies = [
+    "Flask>=3.0.0,<4.0.0",
+    "supabase>=2.0.0,<3.0.0",
+    "python-dotenv>=1.0.0,<2.0.0",
+    "Werkzeug>=3.0.0,<4.0.0",
+]
+
+[tool.vercel]
+entrypoint = "app.py"
