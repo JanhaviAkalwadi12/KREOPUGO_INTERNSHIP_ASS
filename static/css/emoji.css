@@ -1,0 +1,361 @@
+/* =========================================================
+   ANIMATED BANKING BACKGROUND
+   ========================================================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Main background layer */
+.bank-animation-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Keep website content above animation */
+.directors-section,
+.footer,
+.copyright,
+#goTopBtn,
+.chatbot-container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   SOFT GLOW EFFECTS
+   ========================================================= */
+
+.bank-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.16;
+}
+
+.glow-one {
+    width: 300px;
+    height: 300px;
+    background: #075985;
+    top: 5%;
+    left: -100px;
+    animation: glowMoveOne 12s ease-in-out infinite alternate;
+}
+
+.glow-two {
+    width: 260px;
+    height: 260px;
+    background: #0f766e;
+    right: -80px;
+    top: 35%;
+    animation: glowMoveTwo 14s ease-in-out infinite alternate;
+}
+
+.glow-three {
+    width: 220px;
+    height: 220px;
+    background: #114e8b;
+    bottom: 5%;
+    left: 35%;
+    animation: glowMoveThree 16s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   FLOATING BANKING ICONS
+   ========================================================= */
+
+.bank-float {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: rgba(233, 250, 246, 0.977);
+    border: 1px solid rgba(15, 118, 110, 0.14);
+
+    box-shadow:
+        0 8px 25px rgba(7, 89, 133, 0.10),
+        inset 0 0 15px rgba(255, 255, 255, 0.5);
+
+    font-size: 23px;
+
+    opacity: 0.42;
+
+    animation:
+        bankFloat 8s ease-in-out infinite,
+        bankRotate 12s linear infinite;
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* Different positions */
+
+.bank-1 {
+    top: 14%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.bank-2 {
+    top: 28%;
+    left: 13%;
+    animation-delay: 1.5s;
+}
+
+.bank-3 {
+    top: 48%;
+    left: 4%;
+    animation-delay: 3s;
+}
+
+.bank-4 {
+    top: 70%;
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.bank-5 {
+    top: 18%;
+    right: 7%;
+    animation-delay: 4s;
+}
+
+.bank-6 {
+    top: 37%;
+    right: 14%;
+    animation-delay: 1s;
+}
+
+.bank-7 {
+    top: 57%;
+    right: 5%;
+    animation-delay: 3.5s;
+}
+
+.bank-8 {
+    top: 78%;
+    right: 13%;
+    animation-delay: 2.5s;
+}
+
+.bank-9 {
+    top: 88%;
+    left: 30%;
+    animation-delay: 5s;
+}
+
+.bank-10 {
+    top: 11%;
+    left: 45%;
+    animation-delay: 2.8s;
+}
+
+.bank-11 {
+    top: 45%;
+    left: 47%;
+    animation-delay: 4.5s;
+}
+
+.bank-12 {
+    top: 75%;
+    right: 38%;
+    animation-delay: 1.8s;
+}
+
+
+/* =========================================================
+   FLOATING ANIMATION
+   ========================================================= */
+
+@keyframes bankFloat {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-15px) rotate(4deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(-4deg);
+    }
+
+    75% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+
+@keyframes bankRotate {
+
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 180deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+
+/* =========================================================
+   GLOW MOVEMENT
+   ========================================================= */
+
+@keyframes glowMoveOne {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(180px, 80px);
+    }
+}
+
+
+@keyframes glowMoveTwo {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-150px, 90px);
+    }
+}
+
+
+@keyframes glowMoveThree {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(120px, -80px);
+    }
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+   ========================================================= */
+
+.bank-circle {
+    position: absolute;
+
+    border: 1px solid rgba(15, 118, 110, 0.10);
+
+    border-radius: 50%;
+
+    animation: circlePulse 8s ease-in-out infinite;
+}
+
+.circle-one {
+    width: 220px;
+    height: 220px;
+
+    left: -100px;
+    top: 40%;
+}
+
+.circle-two {
+    width: 320px;
+    height: 320px;
+
+    right: -160px;
+    top: 15%;
+
+    animation-delay: 2s;
+}
+
+.circle-three {
+    width: 180px;
+    height: 180px;
+
+    left: 45%;
+    bottom: -90px;
+
+    animation-delay: 4s;
+}
+
+
+@keyframes circlePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 0.7;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .bank-float {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+        opacity: 0.28;
+    }
+
+    .bank-2,
+    .bank-4,
+    .bank-7,
+    .bank-10 {
+        display: none;
+    }
+
+    .bank-glow {
+        filter: blur(55px);
+        opacity: 0.11;
+    }
+}
+
+
+/* =========================================================
+   REDUCE ANIMATION FOR ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .bank-float,
+    .bank-glow,
+    .bank-circle {
+        animation: none;
+    }
+}

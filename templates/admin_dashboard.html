@@ -1,0 +1,1264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Workspace | Anish Souharda</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body class="admin-page">
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="adminSidebar">
+
+        <a href="{{ url_for('admin_dashboard') }}"
+           class="brand-lockup"
+           aria-label="Anish Souharda Admin home">
+
+            <span class="brand-mark small-mark">AS</span>
+
+            <span>
+                <strong>Anish Souharda</strong>
+                <small>Admin Workspace</small>
+            </span>
+
+        </a>
+
+        <div class="sidebar-label">WORKSPACE</div>
+
+        <nav class="side-nav" aria-label="Admin sections">
+
+            <button class="nav-item active" data-module="overview">
+                <span class="nav-icon">▦</span>
+                Overview
+            </button>
+
+            <button class="nav-item" data-module="gallery">
+                <span class="nav-icon">▧</span>
+                Gallery Management
+            </button>
+
+            <button class="nav-item" data-module="directors">
+                <span class="nav-icon">♙</span>
+                Board of Directors
+                <span class="nav-count">13</span>
+            </button>
+
+            <button class="nav-item" data-module="notifications">
+                <span class="nav-icon">◉</span>
+                Header Notifications
+            </button>
+
+            <button class="nav-item" data-module="wishes">
+                <span class="nav-icon">✧</span>
+                Festival Wishes
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="secure-note">
+                <span class="secure-dot"></span>
+
+                <span>
+                    <strong>Secure workspace</strong>
+                    <small>Authorised access only</small>
+                </span>
+            </div>
+
+            <form id="logoutForm"
+                  action="{{ url_for('admin_logout') }}"
+                  method="post">
+
+                <button type="button"
+                        onclick="openLogoutPopup()"
+                        class="logout-btn">
+
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN AREA -->
+
+    <main class="main-area">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="mobile-menu"
+                    id="mobileMenu"
+                    aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div>
+                <p class="eyebrow" id="topEyebrow">ADMINISTRATION</p>
+                <h1 id="pageTitle">Overview</h1>
+            </div>
+
+            <div class="topbar-user">
+
+                <img src="{{ url_for('static', filename='images/admin_avatar.jpg') }}"
+                     alt="Admin Profile"
+                     class="avatar">
+
+                <span>
+                    <strong>{{ admin_username }}</strong>
+                    <small>Administrator</small>
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT AREA -->
+
+        <div class="content-area">
+
+            <!-- 1. OVERVIEW -->
+
+            <section class="module-section active"
+                     id="module-overview">
+
+                <div class="welcome-row">
+
+                    <div>
+                        <p class="eyebrow">CONTROL CENTRE</p>
+
+                        <h2>Good to see you back.</h2>
+
+                        <p class="muted">
+                            Manage the public-facing information on your existing bank website.
+                        </p>
+                    </div>
+
+                    <span class="date-chip" id="todayChip">
+                        Admin workspace
+                    </span>
+
+                </div>
+
+
+                <!-- STATISTICS -->
+
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-icon blue">▧</span>
+                            <span class="stat-caption">MEDIA LIBRARY</span>
+                        </div>
+
+                        <strong id="statGallery">—</strong>
+                        <p>Gallery images</p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-icon green">♙</span>
+                            <span class="stat-caption">BOARD</span>
+                        </div>
+
+                        <strong>
+                            <span id="statDirectors">—</span>
+                            <small> / 13</small>
+                        </strong>
+
+                        <p>Profiles completed</p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-icon gold">◉</span>
+                            <span class="stat-caption">ANNOUNCEMENTS</span>
+                        </div>
+
+                        <strong id="statNotifications">—</strong>
+                        <p>Active notification records</p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-icon violet">✧</span>
+                            <span class="stat-caption">ENGAGEMENT</span>
+                        </div>
+
+                        <strong id="statWishes">—</strong>
+                        <p>Scheduled campaigns</p>
+
+                    </article>
+
+                </div>
+
+
+                <!-- QUICK ACCESS -->
+
+                <div class="overview-grid">
+
+                    <section class="panel-card">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <p class="eyebrow">QUICK ACCESS</p>
+                                <h3>Manage website content</h3>
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+                            <button data-go="gallery"
+                                    class="quick-action">
+
+                                <span class="quick-symbol blue">▧</span>
+
+                                <span>
+                                    <strong>Update gallery</strong>
+                                    <small>Add or remove .jpg/.jpeg images</small>
+                                </span>
+
+                                <b>→</b>
+
+                            </button>
+
+
+                            <button data-go="directors"
+                                    class="quick-action">
+
+                                <span class="quick-symbol green">♙</span>
+
+                                <span>
+                                    <strong>Board of Directors</strong>
+                                    <small>Edit any of the 13 member slots</small>
+                                </span>
+
+                                <b>→</b>
+
+                            </button>
+
+
+                            <button data-go="notifications"
+                                    class="quick-action">
+
+                                <span class="quick-symbol gold">◉</span>
+
+                                <span>
+                                    <strong>Publish notification</strong>
+                                    <small>Show an announcement on the homepage</small>
+                                </span>
+
+                                <b>→</b>
+
+                            </button>
+
+
+                            <button data-go="wishes"
+                                    class="quick-action">
+
+                                <span class="quick-symbol violet">✧</span>
+
+                                <span>
+                                    <strong>Festival campaign</strong>
+                                    <small>Send now or schedule a future wish</small>
+                                </span>
+
+                                <b>→</b>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="panel-card guidance-card">
+
+                        <p class="eyebrow">IMPORTANT</p>
+
+                        <h3>Before publishing</h3>
+
+                        <ul class="guidance-list">
+
+                            <li>
+                                <span>✓</span>
+                                Use only approved bank content and images.
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Gallery files must be JPG/JPEG and at most 2MB.
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Notification attachments must be PDF and at most 5MB.
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Messages are not sent until approved communication providers are configured.
+                            </li>
+
+                        </ul>
+
+                        <div class="notice-callout">
+                            Never upload customer account numbers, PINs, OTPs or confidential banking data to these content tools.
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+
+            <!-- 2. GALLERY MANAGEMENT -->
+
+            <section class="module-section" id="module-gallery">
+
+                <div class="section-intro">
+
+                    <div>
+                        <p class="eyebrow">MEDIA LIBRARY</p>
+
+                        <h2>Gallery Management</h2>
+
+                        <p class="muted">
+                            Upload approved bank photos or remove an existing gallery entry.
+                        </p>
+                    </div>
+
+                    <span class="rule-chip">
+                        JPG / JPEG · Max 2MB
+                    </span>
+
+                </div>
+
+
+                <div class="module-grid gallery-layout">
+
+                    <!-- ADD IMAGE FORM -->
+
+                    <section class="panel-card form-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Add a gallery image</h3>
+
+                                <p class="muted small">
+                                    Only .jpg and .jpeg files are accepted.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <form id="galleryForm"
+                              class="stack-form"
+                              enctype="multipart/form-data">
+
+                            <label for="galleryTitle">
+                                Image title
+                                <span class="required">*</span>
+                            </label>
+
+                            <input id="galleryTitle"
+                                   name="title"
+                                   required
+                                   maxlength="120"
+                                   placeholder="e.g. Dharwad Branch">
+
+
+                            <label for="galleryDescription">
+                                Caption / description
+                            </label>
+
+                            <textarea id="galleryDescription"
+                                      name="description"
+                                      maxlength="500"
+                                      rows="3"
+                                      placeholder="A short description for visitors"></textarea>
+
+
+                            <label for="galleryAlt">
+                                Alternative text
+                                <span class="required">*</span>
+                            </label>
+
+                            <input id="galleryAlt"
+                                   name="alt_text"
+                                   required
+                                   maxlength="160"
+                                   placeholder="Describe the image for accessibility">
+
+
+                            <label for="galleryImage">
+                                Choose image
+                                <span class="required">*</span>
+                            </label>
+
+                            <input id="galleryImage"
+                                   name="image"
+                                   type="file"
+                                   accept=".jpg,.jpeg,image/jpeg"
+                                   required>
+
+                            <small class="field-help">
+                                Maximum 2MB. PNG, WEBP and other formats are rejected.
+                            </small>
+
+
+                            <div id="galleryFileInfo"
+                                 class="file-info"
+                                 aria-live="polite">
+                                No file selected.
+                            </div>
+
+
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    id="addImageBtn">
+
+                                <i class="fa-solid fa-plus"></i>
+                                Add Image
+
+                            </button>
+
+                        </form>
+
+                    </section>
+
+
+                    <!-- CURRENT GALLERY -->
+
+                    <section class="panel-card">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Current media library</h3>
+
+                                <p class="muted small">
+                                    Public gallery reflects this list.
+                                </p>
+                            </div>
+
+                            <span class="count-pill" id="galleryCount">
+                                0 items
+                            </span>
+
+                        </div>
+
+
+                        <div id="galleryGrid" class="media-grid">
+
+                            <div class="loading-state">
+                                Loading gallery…
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+
+            <!-- 3. BOARD OF DIRECTORS -->
+
+            <section class="module-section" id="module-directors">
+
+                <div class="section-intro">
+
+                    <div>
+                        <p class="eyebrow">LEADERSHIP PROFILES</p>
+
+                        <h2>Board of Directors</h2>
+
+                        <p class="muted">
+                            Exactly 13 fixed slots. Save a profile or clear a slot without changing the layout.
+                        </p>
+                    </div>
+
+                    <span class="rule-chip">13 fixed slots</span>
+
+                </div>
+
+
+                <div class="info-banner">
+
+                    <strong>Profile photo:</strong>
+                    JPG, JPEG, PNG or WEBP; maximum 2MB.
+                    Serial number determines public display order.
+
+                </div>
+
+
+                <div id="directorsGrid" class="director-admin-grid">
+
+                    <div class="loading-state">
+                        Loading 13 board member slots…
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 4. HEADER NOTIFICATIONS -->
+
+            <section class="module-section" id="module-notifications">
+
+                <div class="section-intro">
+
+                    <div>
+                        <p class="eyebrow">PUBLIC HEADER TICKER</p>
+
+                        <h2>Header Notifications</h2>
+
+                        <p class="muted">
+                            Active announcements appear directly below the main website header.
+                        </p>
+                    </div>
+
+                    <span class="rule-chip">PDF · Max 5MB</span>
+
+                </div>
+
+
+                <div class="module-grid notices-layout">
+
+                    <!-- NOTIFICATION FORM -->
+
+                    <section class="panel-card form-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3 id="noticeFormTitle">
+                                    Create announcement
+                                </h3>
+
+                                <p class="muted small">
+                                    Publish bank updates, offers, career notices or dividend details.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <form id="notificationForm"
+                              class="stack-form"
+                              enctype="multipart/form-data">
+
+                            <input type="hidden"
+                                   name="id"
+                                   id="notificationId">
+
+
+                            <label for="notificationCategory">
+                                Announcement type
+                                <span class="required">*</span>
+                            </label>
+
+                            <select id="notificationCategory"
+                                    name="category"
+                                    required>
+
+                                <option value="Bank Notification">
+                                    Bank Notification
+                                </option>
+
+                                <option value="Bank Offers">
+                                    Bank Offers
+                                </option>
+
+                                <option value="Career Update">
+                                    Career Update
+                                </option>
+
+                                <option value="Dividend Announcement">
+                                    Dividend Announcement
+                                </option>
+
+                                <option value="Important Update">
+                                    Important Update
+                                </option>
+
+                            </select>
+
+
+                            <label for="notificationTitle">
+                                Title
+                                <span class="required">*</span>
+                            </label>
+
+                            <input id="notificationTitle"
+                                   name="title"
+                                   required
+                                   maxlength="160"
+                                   placeholder="e.g. New career opportunity">
+
+
+                            <label for="notificationMessage">
+                                Message
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea id="notificationMessage"
+                                      name="message"
+                                      rows="4"
+                                      required
+                                      maxlength="2000"
+                                      placeholder="Write the announcement for website visitors"></textarea>
+
+
+                            <!-- OPTIONAL EXTERNAL LINK -->
+
+                            <label for="notificationLink">
+                                External link (optional)
+                            </label>
+
+                            <input id="notificationLink"
+                                   name="link_url"
+                                   type="url"
+                                   placeholder="https://example.com">
+
+                            <small class="field-help">
+                                Add a website link if visitors need to read more details.
+                            </small>
+
+
+                            <!-- OPTIONAL PDF -->
+
+                            <label for="notificationPdf">
+                                PDF attachment (optional)
+                            </label>
+
+                            <input id="notificationPdf"
+                                   name="pdf"
+                                   type="file"
+                                   accept=".pdf,application/pdf">
+
+                            <small class="field-help">
+                                Only .pdf files, maximum 5MB. Do not upload executable files.
+                            </small>
+
+
+                            <label class="check-row">
+
+                                <input type="checkbox"
+                                       id="removeNotificationPdf"
+                                       name="remove_pdf"
+                                       value="1">
+
+                                Remove the existing PDF when saving
+
+                            </label>
+
+
+                            <!-- SCHEDULE -->
+
+                            <div class="two-col">
+
+                                <div>
+
+                                    <label for="notificationStart">
+                                        Show from (optional)
+                                    </label>
+
+                                    <input id="notificationStart"
+                                           name="start_at"
+                                           type="datetime-local">
+
+                                </div>
+
+
+                                <div>
+
+                                    <label for="notificationEnd">
+                                        Show until (optional)
+                                    </label>
+
+                                    <input id="notificationEnd"
+                                           name="end_at"
+                                           type="datetime-local">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ACTIVE STATUS -->
+
+                            <label class="check-row">
+
+                                <input type="checkbox"
+                                       id="notificationActive"
+                                       name="active"
+                                       value="1"
+                                       checked>
+
+                                Active — show on public website
+
+                            </label>
+
+
+                            <!-- BUTTONS -->
+
+                            <div class="form-actions">
+
+                                <button class="btn btn-primary"
+                                        type="submit"
+                                        id="notificationSubmit">
+
+                                    Publish announcement
+
+                                </button>
+
+
+                                <button class="btn btn-secondary hidden"
+                                        type="button"
+                                        id="cancelNoticeEdit">
+
+                                    Cancel edit
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </section>
+
+
+                    <!-- ANNOUNCEMENT LIST -->
+
+                    <section class="panel-card">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Announcements</h3>
+
+                                <p class="muted small">
+                                    Inactive or out-of-date notices stay hidden from the public ticker.
+                                </p>
+                            </div>
+
+                            <span class="count-pill" id="noticeCount">
+                                0 items
+                            </span>
+
+                        </div>
+
+
+                        <div id="notificationList" class="record-list">
+
+                            <div class="loading-state">
+                                Loading announcements…
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+
+            <!-- 5. FESTIVAL WISHES -->
+
+            <section class="module-section" id="module-wishes">
+
+                <div class="section-intro">
+
+                    <div>
+                        <p class="eyebrow">CUSTOMER ENGAGEMENT</p>
+
+                        <h2>Festival Wishes</h2>
+
+                        <p class="muted">
+                            Create and send festival greetings to bank customers through WhatsApp, SMS and Email.
+                        </p>
+                    </div>
+
+                    <span class="rule-chip">WhatsApp · SMS · Email</span>
+
+                </div>
+
+
+                <div class="info-banner warning-banner">
+
+                    <strong>Important:</strong>
+                    Messages will be sent only after the respective communication
+                    providers are configured. Customer consent and opt-out preferences
+                    must be checked before sending.
+
+                </div>
+
+
+                <div class="module-grid wishes-layout">
+
+                    <!-- CREATE FESTIVAL CAMPAIGN -->
+
+                    <section class="panel-card form-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Create festival campaign</h3>
+
+                                <p class="muted small">
+                                    Prepare festival greetings for your customers.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <form id="wishForm"
+                              class="stack-form"
+                              enctype="multipart/form-data">
+
+
+                            <label for="wishTitle">
+                                Festival / Campaign name
+                                <span class="required">*</span>
+                            </label>
+
+                            <input id="wishTitle"
+                                   name="title"
+                                   required
+                                   maxlength="120"
+                                   placeholder="e.g. Diwali Wishes 2026">
+
+
+                            <label for="wishMessage">
+                                Greeting message
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea id="wishMessage"
+                                      name="message"
+                                      rows="5"
+                                      required
+                                      maxlength="1000"
+                                      placeholder="Write your festival greeting message..."></textarea>
+
+
+                            <label for="wishImage">
+                                Festival image (optional)
+                            </label>
+
+                            <input id="wishImage"
+                                   name="image"
+                                   type="file"
+                                   accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp">
+
+                            <small class="field-help">
+                                Select an approved festival greeting image.
+                            </small>
+
+
+                            <label>
+                                Communication channels
+                                <span class="required">*</span>
+                            </label>
+
+
+                            <div class="channel-options">
+
+                                <label class="check-row">
+
+                                    <input type="checkbox"
+                                           name="channels"
+                                           value="whatsapp">
+
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    WhatsApp
+
+                                </label>
+
+
+                                <label class="check-row">
+
+                                    <input type="checkbox"
+                                           name="channels"
+                                           value="sms">
+
+                                    <i class="fa-solid fa-comment-sms"></i>
+                                    SMS
+
+                                </label>
+
+
+                                <label class="check-row">
+
+                                    <input type="checkbox"
+                                           name="channels"
+                                           value="email">
+
+                                    <i class="fa-solid fa-envelope"></i>
+                                    Email
+
+                                </label>
+
+                            </div>
+
+
+                            <label for="wishAudience">
+                                Select audience
+                                <span class="required">*</span>
+                            </label>
+
+                            <select id="wishAudience"
+                                    name="audience"
+                                    required>
+
+                                <option value="opted_in_customers">
+                                    All opted-in customers
+                                </option>
+
+                            </select>
+
+
+                            <label for="wishSchedule">
+                                Schedule date and time (optional)
+                            </label>
+
+                            <input id="wishSchedule"
+                                   name="schedule_at"
+                                   type="datetime-local">
+
+
+                            <small class="field-help">
+                                Leave blank to request immediate processing.
+                                Scheduled campaigns require the background worker.
+                            </small>
+
+
+                            <button class="btn btn-primary"
+                                    type="submit">
+
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Send / Schedule Wishes
+
+                            </button>
+
+                        </form>
+
+                    </section>
+
+
+                    <!-- CAMPAIGN HISTORY -->
+
+                    <section class="panel-card">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Campaign history</h3>
+
+                                <p class="muted small">
+                                    View campaign details and delivery status.
+                                </p>
+                            </div>
+
+                            <span class="count-pill" id="wishCount">
+                                0 campaigns
+                            </span>
+
+                        </div>
+
+
+                        <div class="table-wrap">
+
+                            <table class="data-table">
+
+                                <thead>
+
+                                    <tr>
+                                        <th>Campaign</th>
+                                        <th>Channels</th>
+                                        <th>Schedule / Status</th>
+                                        <th>Action</th>
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="wishesTableBody">
+
+                                    <tr>
+                                        <td colspan="4" class="empty-cell">
+                                            Loading campaigns…
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer class="admin-footer">
+
+            <span>
+                © <span id="yearText"></span> Anish Souharda
+            </span>
+
+            <span>
+                Website Administration · Protect customer privacy
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- TOAST REGION -->
+
+<div id="toastRegion"
+     class="toast-region"
+     aria-live="polite"
+     aria-atomic="true">
+</div>
+
+
+<!-- BUSY OVERLAY -->
+
+<div id="busyOverlay" class="busy-overlay" hidden>
+
+    <div class="spinner"
+         role="status"
+         aria-label="Loading">
+    </div>
+
+    <span>Saving changes…</span>
+
+</div>
+
+
+<!-- IMAGE UPLOAD CONFIRMATION POPUP -->
+
+<div class="admin-popup-overlay" id="uploadConfirmOverlay">
+
+    <div class="admin-success-popup">
+
+        <div class="admin-popup-icon">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+        </div>
+
+        <h2>Confirm Image Upload</h2>
+
+        <p>
+            Do you want to upload this image to the bank gallery?
+        </p>
+
+        <div class="upload-popup-buttons">
+
+            <button type="button"
+                    id="uploadCancelBtn"
+                    class="cancel-btn">
+                Cancel
+            </button>
+
+
+            <button type="button"
+                    id="confirmUploadBtn"
+                    class="upload-btn">
+                Upload Image
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- IMAGE UPLOAD SUCCESS POPUP -->
+
+<div class="admin-popup-overlay" id="adminPopupOverlay">
+
+    <div class="admin-success-popup">
+
+        <div class="admin-popup-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h2 id="adminPopupTitle">
+            Success!
+        </h2>
+
+        <p id="adminPopupMessage">
+            Gallery image uploaded successfully!
+        </p>
+
+        <button type="button" id="adminPopupOk">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- LOGOUT CONFIRMATION POPUP -->
+
+<div class="admin-popup-overlay" id="logoutPopup">
+
+    <div class="admin-success-popup">
+
+        <div class="admin-popup-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Confirm Logout</h2>
+
+        <p>
+            Are you sure you want to sign out of the admin workspace?
+        </p>
+
+        <div class="upload-popup-buttons">
+
+            <button type="button"
+                    class="cancel-btn"
+                    onclick="closeLogoutPopup()">
+                Cancel
+            </button>
+
+
+            <button type="button"
+                    class="upload-btn"
+                    onclick="confirmLogout()">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CUSTOM POPUP -->
+
+<div id="customPopup" class="custom-popup-overlay">
+
+    <div class="custom-popup">
+
+        <div class="popup-icon" id="popupIcon">
+            ✓
+        </div>
+
+        <h3 id="popupTitle">Success!</h3>
+
+        <p id="popupMessage">
+            PDF selected successfully.
+        </p>
+
+        <button onclick="closeCustomPopup()">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- DELETE CONFIRMATION MODAL -->
+<div id="deleteWishModal" class="custom-modal">
+
+    <div class="custom-modal-box">
+
+        <div class="modal-header">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h3>Confirm Deletion</h3>
+        </div>
+
+        <div class="modal-body">
+            <p>Are you sure you want to delete this festival campaign?</p>
+            <small>This action cannot be undone.</small>
+        </div>
+
+        <div class="modal-footer">
+
+            <button type="button"
+                    id="cancelDeleteWish"
+                    class="modal-cancel-btn">
+                Cancel
+            </button>
+
+            <button type="button"
+                    id="confirmDeleteWish"
+                    class="modal-delete-btn">
+                <i class="fa-solid fa-trash"></i>
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ADMIN JAVASCRIPT -->
+
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
+</body>
+</html>

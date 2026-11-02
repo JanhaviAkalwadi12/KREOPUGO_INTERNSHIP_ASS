@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Loan Services | Anish Souharda Cooperative Bank</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="details-page">
+
+ <!-- ================= NAVIGATION ================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="bank-logo">
+            AS
+        </div>
+
+        <div>
+            <h2>Anish Souharda</h2>
+            <span><h3> Co-operative Society</h3 ></span>
+        </div>
+
+    </div>
+
+    <nav class="navbar">
+
+            
+   
+<a href="{{ url_for('home') }}?from=page#home">Home</a>
+<a href="{{ url_for('home') }}?from=page#about">About</a>
+<a href="{{ url_for('home') }}?from=page#services">Services</a>
+<a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+<a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+<a href="{{ url_for('home') }}?from=page#contact">Contacts</a>
+<a href="{{ url_for('board_directors') }}?from=page#board_directors">Board of Directors</a>
+<a href="{{ url_for('gallery') }}?from=page#gallery">Gallery</a>
+      <li class="others-dropdown" >
+    <a href="javascript:void(0);" onclick="toggleOthersMenu()">Others </a>
+
+    <div class="others-menu" id="othersMenu">
+      <a href="{{ url_for('privacy') }}?from=page#privacy">Privacy and Policy</a>
+      <a href="{{ url_for('terms') }}?from=page#terms">Terms and Conditions</a>
+    </div>
+</li>
+    </nav>
+        </div>
+    <!-- <button class="menu-btn" onclick="toggleMenu()">☰</button> -->
+</header>
+
+<!-- ================= ANIMATED BANKING BACKGROUND ================= -->
+
+<div class="bank-animation-bg" aria-hidden="true">
+
+    <!-- Soft glowing circles -->
+    <div class="bank-glow glow-one"></div>
+    <div class="bank-glow glow-two"></div>
+    <div class="bank-glow glow-three"></div>
+
+    <!-- Floating banking icons -->
+    <div class="bank-float bank-1">₹</div>
+    <div class="bank-float bank-2">🪙</div>
+    <div class="bank-float bank-3">💰</div>
+    <div class="bank-float bank-4">🏦</div>
+    <div class="bank-float bank-5">💳</div>
+    <div class="bank-float bank-6">₹</div>
+    <div class="bank-float bank-7">🪙</div>
+    <div class="bank-float bank-8">💵</div>
+    <div class="bank-float bank-9">🏧</div>
+    <div class="bank-float bank-10">📈</div>
+    <div class="bank-float bank-11">₹</div>
+    <div class="bank-float bank-12">💰</div>
+
+    <!-- Decorative banking circles -->
+    <div class="bank-circle circle-one"></div>
+    <div class="bank-circle circle-two"></div>
+    <div class="bank-circle circle-three"></div>
+
+</div>
+<!-- ================= LOAN HERO ================= -->
+
+<section class="details-hero">
+
+    <div class="details-icon" id="loanIcon">
+       <span translate="no">👤</span>
+         </div>
+
+    <h1 id="loanTitle">
+        Personal Loan
+    </h1>
+
+    <p id="loanSubtitle">
+        Financial support for eligible personal requirements.
+    </p>
+
+</section>
+
+
+<!-- ================= LOAN CONTENT ================= -->
+
+<main class="details-container">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="details-intro">
+
+        <h2 id="introTitle">
+            About Personal Loan
+        </h2>
+
+        <p id="introText">
+
+            A personal loan is a sample financial solution
+            that may help eligible customers meet planned
+            personal expenses. Actual loan availability,
+            terms and conditions depend on the bank's policies.
+
+        </p>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+
+    <section class="info-grid">
+
+
+        <!-- FEATURES -->
+
+        <div class="info-card">
+
+            <h3> Key Features</h3>
+
+            <ul id="featuresList">
+
+                <li>
+                    Designed for eligible customers
+                </li>
+
+                <li>
+                    Flexible purpose depending on loan type
+                </li>
+
+                <li>
+                    Application and verification process
+                </li>
+
+                <li>
+                    Repayment according to approved terms
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- BENEFITS -->
+
+        <div class="info-card">
+
+            <h3> General Benefits</h3>
+
+            <ul id="benefitsList">
+
+                <li>
+                    Helps manage planned expenses
+                </li>
+
+                <li>
+                    Provides financial support when required
+                </li>
+
+                <li>
+                    Structured repayment facility
+                </li>
+
+                <li>
+                    Can support specific financial goals
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- ELIGIBILITY -->
+
+    <section class="highlight-box">
+
+        <h3>
+             General Eligibility
+        </h3>
+
+        <p id="eligibilityText">
+
+            Eligibility may depend on factors such as
+            customer profile, income, repayment capacity,
+            documents and the bank's applicable policies.
+
+        </p>
+
+    </section>
+
+
+    <!-- DOCUMENTS -->
+
+    <section class="highlight-box">
+
+        <h3>
+             General Documents
+        </h3>
+
+        <p id="documentsText">
+
+            Depending on the loan type, applicants may
+            be asked to provide identity, address, income
+            or education/business-related documents.
+            The actual requirements should be confirmed
+            with the bank.
+
+        </p>
+
+    </section>
+
+
+    <!-- IMPORTANT NOTE -->
+
+    <section class="highlight-box">
+
+        <h3>
+             Important Information
+        </h3>
+
+        <p>
+
+            This page contains dummy information created
+            for an educational website project. Actual
+            interest rates, eligibility, loan limits,
+            documents, charges and repayment terms should
+            be confirmed directly with the bank.
+
+        </p>
+
+    </section>
+
+
+</section>
+
+    <!-- BACK -->
+
+        
+<a href="{{ url_for('home') }}?from=page#loans" class="back-btn">
+    ← Back to Loans
+</a>
+
+
+</main>
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-logo">
+
+            <div class="bank-logo">AS</div>
+
+            <div>
+                <h3>Anish Souharda</h3>
+                <p>Cooperative Bank</p>
+            </div>
+
+        </div>
+
+        <p>
+            Banking with trust, simplicity and care.
+        </p>
+         <div class="social-icons"> 
+
+    <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" class="instagram" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" class="youtube" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+</div> 
+    </div>
+
+
+   <div class="footer-links">
+   <h4>Quick Links</h4>
+        <a href="{{ url_for('home') }}?from=page" >Home</a>
+        <a href="{{ url_for('home') }}?from=page#about">About</a>
+        <a href="{{ url_for('home') }}?from=page#services">Services</a>
+        <a href="{{ url_for('home') }}?from=page#contact">Contact</a>
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Services</h4>
+        <a href="{{ url_for('home') }}?from=page#services">Savings</a>
+        <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+        <a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+        <a href="{{ url_for('home') }}?from=page#services">Digital Banking</a>
+        <a href="{{ url_for('home') }}?from=page#faq-section">FAQ</a>
+     
+    </div>
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <h3>
+     @2026-  All rights Reserved
+    </h3>
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const loans = {
+
+    personal: {
+
+        icon: <span translate="no">"👤" </span>,
+
+        title: "Personal Loan",
+
+        subtitle:
+            "Financial support for eligible personal requirements.",
+
+        introTitle:
+            "About Personal Loan",
+
+        intro:
+            "A personal loan is a sample financial solution that may help eligible customers meet planned personal expenses. Actual loan availability, terms and conditions depend on the bank's policies.",
+
+        features: [
+
+            "Designed for eligible customers",
+
+            "May support planned personal expenses",
+
+            "Application and verification process",
+
+            "Repayment according to approved terms"
+
+        ],
+
+        benefits: [
+
+            "Helps manage planned expenses",
+
+            "Provides financial support when required",
+
+            "Structured repayment facility",
+
+            "Can support specific financial goals"
+
+        ],
+
+        eligibility:
+            "Eligibility may depend on customer profile, income, repayment capacity, documents and the bank's applicable policies."
+
+    },
+
+
+    business: {
+
+        icon:<span translate="no"> "🏢" </span>,
+
+        title: "Business Loan",
+
+        subtitle:
+            "Financial support for eligible business requirements.",
+
+        introTitle:
+            "About Business Loan",
+
+        intro:
+            "A business loan is a sample financing solution that may help eligible businesses meet requirements such as working capital, expansion or other approved business purposes.",
+
+        features: [
+
+            "Designed for eligible businesses",
+
+            "May support business requirements",
+
+            "Application and verification process",
+
+            "Repayment according to approved terms"
+
+        ],
+
+        benefits: [
+
+            "Can support business activities",
+
+            "May help with planned expansion",
+
+            "Supports organized business financing",
+
+            "Structured repayment facility"
+
+        ],
+
+        eligibility:
+            "Eligibility may depend on business profile, financial records, repayment capacity, documents and applicable bank policies."
+
+    },
+
+
+    education: {
+
+        icon: <span translate="no">"🎓" </span>,
+
+        title: "Education Loan",
+
+        subtitle:
+            "Financial support for eligible education-related requirements.",
+
+        introTitle:
+            "About Education Loan",
+
+        intro:
+            "An education loan is a sample financial solution that may help eligible students and families manage approved education-related expenses.",
+
+        features: [
+
+            "Designed for eligible education requirements",
+
+            "May support approved educational expenses",
+
+            "Application and verification process",
+
+            "Repayment according to approved terms"
+
+        ],
+
+        benefits: [
+
+            "Helps manage education expenses",
+
+            "Supports educational goals",
+
+            "Provides structured financial assistance",
+
+            "Can help students plan their education"
+
+        ],
+
+        eligibility:
+            "Eligibility may depend on the student, course, institution, applicant profile, documents and applicable bank policies."
+
+    }
+
+};
+
+
+
+
+/* GET LOAN FROM URL */
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const loanName =
+    params.get("loan") || "personal";
+
+
+/* SELECT LOAN */
+
+const loan =
+    loans[loanName] || loans.personal;
+
+
+/* DISPLAY LOAN */
+
+document.getElementById("loanIcon")
+    .textContent = loan.icon;
+
+document.getElementById("loanTitle")
+    .textContent = loan.title;
+
+document.getElementById("loanSubtitle")
+    .textContent = loan.subtitle;
+
+document.getElementById("introTitle")
+    .textContent = loan.introTitle;
+
+document.getElementById("introText")
+    .textContent = loan.intro;
+
+document.getElementById("eligibilityText")
+    .textContent = loan.eligibility;
+
+
+/* FEATURES */
+
+const featuresList =
+    document.getElementById("featuresList");
+
+featuresList.innerHTML = "";
+
+loan.features.forEach(function(feature) {
+
+    const li =
+        document.createElement("li");
+
+    li.textContent = feature;
+
+    featuresList.appendChild(li);
+
+});
+
+
+/* BENEFITS */
+
+const benefitsList =
+    document.getElementById("benefitsList");
+
+benefitsList.innerHTML = "";
+
+loan.benefits.forEach(function(benefit) {
+
+    const li =
+        document.createElement("li");
+
+    li.textContent = benefit;
+
+    benefitsList.appendChild(li);
+
+});
+
+</script>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

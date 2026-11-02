@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Branch Visit Scheduled | Anish Bank</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/branch_visit_success.css') }}">
+</head>
+
+<body>
+
+    <div class="success-container">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>Thank You!</h1>
+
+            <h2>Branch Visit Scheduled Successfully!</h2>
+
+            <p class="main-message">
+                Your branch visit request has been received successfully.
+            </p>
+
+            <p class="thank-message">
+                Thank you for choosing Anish Souharda Cooperative Bank.
+                We appreciate your trust in us.
+            </p>
+
+            <div class="details-box">
+
+                <h3>Your Visit Details</h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    {{ name }}
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    {{ phone }}
+                </p>
+
+                <p>
+                    <strong>Purpose:</strong>
+                    {{ purpose }}
+                </p>
+
+                <p>
+                    <strong>Preferred Date:</strong>
+                    {{ preferred_date }}
+                </p>
+
+                <p>
+                    <strong>Preferred Time:</strong>
+                    {{ preferred_time }}
+                </p>
+
+            </div>
+
+            <p class="footer-message">
+                We look forward to welcoming you!
+            </p>
+
+
+            <!-- <a href="index4.html?from=page#contact" class="home-btn"> Back to Home</a> -->
+            <a href="{{ url_for('home') }}?from=page#contact" class="home-btn">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

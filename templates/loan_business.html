@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Business Loan | Anish Souharda Cooperative Bank</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Existing CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="bank-logo">
+            AS
+        </div>
+
+        <div>
+            <h2>Anish Souharda</h2>
+            <span><h3>Co-operative Society</h3></span>
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+            
+   
+<a href="{{ url_for('home') }}?from=page#home">Home</a>
+<a href="{{ url_for('home') }}?from=page#about">About</a>
+<a href="{{ url_for('home') }}?from=page#services">Services</a>
+<a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+<a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+<a href="{{ url_for('home') }}?from=page#contact">Contacts</a>
+<a href="{{ url_for('board_directors') }}?from=page#board_directors">Board of Directors</a>
+<a href="{{ url_for('gallery') }}?from=page#gallery">Gallery</a>
+      <li class="others-dropdown" >
+    <a href="javascript:void(0);" onclick="toggleOthersMenu()">Others </a>
+
+    <div class="others-menu" id="othersMenu">
+      <a href="{{ url_for('privacy') }}?from=page#privacy">Privacy and Policy</a>
+      <a href="{{ url_for('terms') }}?from=page#terms">Terms and Conditions</a>
+
+            </div>
+
+        </li>
+
+
+     
+
+    </nav>
+
+
+
+    <!-- Mobile Menu -->
+<!-- 
+    <button class="menu-btn"
+            onclick="toggleMenu()">
+
+        ☰
+
+    </button> -->
+
+</header>
+<!-- ================= ANIMATED BANKING BACKGROUND ================= -->
+
+<div class="bank-animation-bg" aria-hidden="true">
+
+    <!-- Soft glowing circles -->
+    <div class="bank-glow glow-one"></div>
+    <div class="bank-glow glow-two"></div>
+    <div class="bank-glow glow-three"></div>
+
+    <!-- Floating banking icons -->
+    <div class="bank-float bank-1">₹</div>
+    <div class="bank-float bank-2">🪙</div>
+    <div class="bank-float bank-3">💰</div>
+    <div class="bank-float bank-4">🏦</div>
+    <div class="bank-float bank-5">💳</div>
+    <div class="bank-float bank-6">₹</div>
+    <div class="bank-float bank-7">🪙</div>
+    <div class="bank-float bank-8">💵</div>
+    <div class="bank-float bank-9">🏧</div>
+    <div class="bank-float bank-10">📈</div>
+    <div class="bank-float bank-11">₹</div>
+    <div class="bank-float bank-12">💰</div>
+
+    <!-- Decorative banking circles -->
+    <div class="bank-circle circle-one"></div>
+    <div class="bank-circle circle-two"></div>
+    <div class="bank-circle circle-three"></div>
+
+</div>
+
+<!-- =====================================================
+     BUSINESS LOAN PAGE
+====================================================== -->
+
+<main class="details-page" >
+
+
+    <!-- =================================================
+         HERO SECTION
+    ================================================== -->
+
+    <section class="details-hero">
+
+        <div class="details-icon">
+            💼
+        </div>
+
+        <h1>
+            Business Loan
+        </h1>
+
+        <p>
+            Support your business growth with financial assistance
+            designed to help entrepreneurs manage business expenses,
+            expand operations and achieve their business goals.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CONTENT
+    ================================================== -->
+
+    <div class="details-container">
+
+
+        <!-- =================================================
+             INTRODUCTION
+        ================================================== -->
+
+        <section class="details-intro">
+
+            <h2>
+                What is a Business Loan?
+            </h2>
+
+            <p>
+                A business loan is a financial facility that helps
+                eligible businesses meet their working capital,
+                expansion and other approved business-related
+                financial requirements.
+            </p>
+
+            <p>
+                Anish Souharda Cooperative Bank provides business
+                loan facilities to support eligible entrepreneurs
+                and businesses in managing their financial
+                requirements according to the bank's rules and
+                policies.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INFORMATION CARDS
+        ================================================== -->
+
+        <section class="info-grid">
+
+
+            <!-- BUSINESS EXPENSES -->
+
+            <div class="info-card">
+
+                <h3>
+                    Business Expenses Covered
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Working capital requirements.
+                    </li>
+
+                    <li>
+                        Purchase of business equipment.
+                    </li>
+
+                    <li>
+                        Business expansion expenses.
+                    </li>
+
+                    <li>
+                        Purchase of stock and inventory.
+                    </li>
+
+                    <li>
+                        Renovation or improvement of business premises.
+                    </li>
+
+                    <li>
+                        Other approved business-related expenses.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- BENEFITS -->
+
+            <div class="info-card">
+
+                <h3>
+                    Benefits
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Helps meet business financial requirements.
+                    </li>
+
+                    <li>
+                        Supports business expansion.
+                    </li>
+
+                    <li>
+                        Helps manage working capital needs.
+                    </li>
+
+                    <li>
+                        Supports purchase of business assets and equipment.
+                    </li>
+
+                    <li>
+                        Helps entrepreneurs manage planned business expenses.
+                    </li>
+
+                    <li>
+                        Structured repayment options.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- ELIGIBILITY -->
+
+            <div class="info-card">
+
+                <h3>
+                    Eligibility
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Business owners and eligible entrepreneurs.
+                    </li>
+
+                    <li>
+                        Applicants operating an eligible business.
+                    </li>
+
+                    <li>
+                        Applicants meeting the bank's requirements.
+                    </li>
+
+                    <li>
+                        Business with satisfactory financial records,
+                        wherever required.
+                    </li>
+
+                    <li>
+                        Suitable co-applicant or guarantor,
+                        where applicable.
+                    </li>
+
+                    <li>
+                        Other conditions as per bank guidelines.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- DOCUMENTS -->
+
+            <div class="info-card">
+
+                <h3>
+                    Documents Required
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Valid identity proof.
+                    </li>
+
+                    <li>
+                        Valid address proof.
+                    </li>
+
+                    <li>
+                        Recent passport-size photographs.
+                    </li>
+
+                    <li>
+                        Business registration or related documents,
+                        wherever applicable.
+                    </li>
+
+                    <li>
+                        Bank statements and financial records,
+                        wherever required.
+                    </li>
+
+                    <li>
+                        Income and business-related documents.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WHY BUSINESS LOAN
+        ================================================== -->
+
+        <section class="highlight-box">
+
+            <h3>
+                Why Choose a Business Loan?
+            </h3>
+
+            <p>
+                A business loan can help entrepreneurs manage
+                important financial requirements without
+                interrupting regular business activities.
+                It can provide financial support for working
+                capital, expansion, equipment and other eligible
+                business needs while helping the business work
+                towards future growth.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BUSINESS LOAN FEATURES
+        ================================================== -->
+
+        <section class="info-grid">
+
+
+            <!-- LOAN FEATURES -->
+
+            <div class="info-card">
+
+                <h3>
+                    Loan Features
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Financial assistance for eligible business needs.
+                    </li>
+
+                    <li>
+                        Support for working capital requirements.
+                    </li>
+
+                    <li>
+                        Assistance for business expansion.
+                    </li>
+
+                    <li>
+                        Loan amount based on eligibility and requirements.
+                    </li>
+
+                    <li>
+                        Repayment through regular instalments.
+                    </li>
+
+                    <li>
+                        Terms based on the bank's prevailing policies.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- SUITABLE FOR -->
+
+            <div class="info-card">
+
+                <h3>
+                    Suitable For
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Small business owners.
+                    </li>
+
+                    <li>
+                        Self-employed individuals.
+                    </li>
+
+                    <li>
+                        Entrepreneurs.
+                    </li>
+
+                    <li>
+                        Traders and eligible business operators.
+                    </li>
+
+                    <li>
+                        Businesses planning expansion.
+                    </li>
+
+                    <li>
+                        Eligible businesses requiring financial support.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             THINGS TO REMEMBER
+        ================================================== -->
+
+        <section class="info-grid">
+
+
+            <!-- THINGS TO REMEMBER -->
+
+            <div class="info-card">
+
+                <h3>
+                    Things to Remember
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Understand the purpose of the business loan.
+                    </li>
+
+                    <li>
+                        Keep business and financial documents ready.
+                    </li>
+
+                    <li>
+                        Check the applicable loan terms carefully.
+                    </li>
+
+                    <li>
+                        Understand applicable interest and charges.
+                    </li>
+
+                    <li>
+                        Check repayment requirements before applying.
+                    </li>
+
+                    <li>
+                        Maintain proper repayment discipline.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- APPLICATION PROCESS -->
+
+            <div class="info-card">
+
+                <h3>
+                    Application Process
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Select the suitable business loan facility.
+                    </li>
+
+                    <li>
+                        Submit the completed loan application.
+                    </li>
+
+                    <li>
+                        Provide the required documents.
+                    </li>
+
+                    <li>
+                        Provide business and financial details.
+                    </li>
+
+                    <li>
+                        The bank verifies eligibility and documents.
+                    </li>
+
+                    <li>
+                        Loan approval is subject to applicable conditions.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             IMPORTANT INFORMATION
+        ================================================== -->
+
+        <section class="highlight-box">
+
+            <h3>
+                Important Information
+            </h3>
+
+            <p>
+                Interest rates, loan amounts, repayment periods,
+                eligible businesses, processing charges, security
+                requirements and other conditions are subject to
+                the bank's prevailing rules and policies. Please
+                contact the bank for the latest applicable terms
+                and conditions before applying.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        
+<a href="{{ url_for('home') }}?from=page#loans" class="back-btn">
+    ← Back to Loans
+</a>
+
+
+
+        </a>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-logo">
+
+            <div class="bank-logo">AS</div>
+
+            <div>
+                <h3>Anish Souharda</h3>
+                <p>Cooperative Bank</p>
+            </div>
+
+        </div>
+
+        <p>
+            Banking with trust, simplicity and care.
+        </p>
+         <div class="social-icons"> 
+
+    <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" class="instagram" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" class="youtube" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+</div> 
+    </div>
+
+
+    <div class="footer-links">
+   <h4>Quick Links</h4>
+        <a href="{{ url_for('home') }}?from=page" >Home</a>
+        <a href="{{ url_for('home') }}?from=page#about">About</a>
+        <a href="{{ url_for('home') }}?from=page#services">Services</a>
+        <a href="{{ url_for('home') }}?from=page#contact">Contact</a>
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Services</h4>
+        <a href="{{ url_for('home') }}?from=page#services">Savings</a>
+        <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+        <a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+        <a href="{{ url_for('home') }}?from=page#services">Digital Banking</a>
+        <a href="{{ url_for('home') }}?from=page#faq-section">FAQ</a>
+     
+    </div>
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <h3>
+     @2026-  All rights Reserved
+    </h3>
+
+</div>
+
+<!-- =====================================================
+     GOOGLE TRANSLATE
+====================================================== -->
+
+<script>
+
+function googleTranslateElementInit() {
+
+    new google.translate.TranslateElement(
+
+        {
+            pageLanguage: "en",
+            includedLanguages: "en,kn,hi",
+            layout:
+                google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+
+        "google_translate_element"
+
+    );
+
+}
+// ======================================================
+// OTHERS DROPDOWN
+// ======================================================
+
+function toggleOthersMenu() {
+
+    const menu =
+        document.getElementById("othersMenu");
+
+    if (!menu) {
+        return;
+    }
+
+    if (menu.style.display === "block") {
+
+        menu.style.display = "none";
+
+    } else {
+
+        menu.style.display = "block";
+
+    }
+
+}
+</script>
+<!-- =====================================================
+     EXISTING JAVASCRIPT
+====================================================== -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

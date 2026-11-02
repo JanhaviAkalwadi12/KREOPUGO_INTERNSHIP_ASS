@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Anish Souharda Cooperative Bank</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+     
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    </head>
+
+<body>
+  <!-- BANK INTRO / LANDING SCREEN -->
+<div id="bankIntro">
+<!-- Skip Button -->
+<button id="skipIntroBtn" onclick="document.getElementById('bankIntro').classList.add('hide-intro')">
+    Skip →
+</button>
+    <!-- Animated Background -->
+    <div class="bank-grid"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <!-- Floating Banking Elements -->
+    <div class="floating-icon icon-1">₹</div>
+    <div class="floating-icon icon-2">%</div>
+    <div class="floating-icon icon-3">₿</div>
+    <div class="floating-icon icon-4">₹</div>
+
+    <!-- Digital Lines -->
+    <div class="digital-line line-1"></div>
+    <div class="digital-line line-2"></div>
+    <div class="digital-line line-3"></div>
+
+    <div class="intro-content">
+
+        <!-- Logo -->
+        <div class="intro-logo">
+            <span>AS</span>
+        </div>
+
+        <div class="intro-small">
+            WELCOME TO
+        </div>
+
+        <h1>
+            Anish Souharda
+            <span>Cooperative Bank</span>
+        </h1>
+
+        <div class="intro-divider"></div>
+
+        <p class="intro-tagline">
+            Secure. Simple. Smart Banking.
+        </p>
+
+        <p class="intro-description">
+            Empowering your financial journey with trusted
+            banking solutions and modern digital services.
+        </p>
+
+        <!-- Banking Animation -->
+        <div class="bank-animation">
+
+            <div class="bank-building">
+                <div class="bank-roof"></div>
+
+                <div class="bank-columns">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="bank-base"></div>
+            </div>
+
+            <div class="money-particle particle-1">₹</div>
+            <div class="money-particle particle-2">₹</div>
+            <div class="money-particle particle-3">+</div>
+
+        </div>
+
+        <button id="enterBankBtn">
+            <span>Enter Banking</span>
+            <i>→</i>
+        </button>
+
+        <div class="secure-text">
+            <span class="secure-dot"></span>
+            Your trust. Our responsibility.
+        </div>
+
+    </div>
+
+    <!-- Bottom Wave -->
+    <div class="intro-wave"></div>
+
+</div>
+
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<header class="header">
+    <div class="logo-area">
+        <div class="bank-logo">
+            AS
+        </div>
+        <div>
+            <h2>Anish Souharda</h2>
+            <span><h3> Co-operative Society</h3 ></span>
+        </div>
+    </div>
+    <nav class="navbar">
+        
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#deposits">Deposits</a>
+        <a href="#loans">Loans</a>
+        <a href="#contact">Contacts</a>
+        <a href="{{ url_for('board_directors') }}?from=page#board_directors">Board of Directors</a>
+   <a href="{{ url_for('gallery') }}">Gallery</a>
+      <li class="others-dropdown">
+    <a href="javascript:void(0);" onclick="toggleOthersMenu()">Others </a>
+    <div class="others-menu" id="othersMenu">
+        <a href="{{ url_for('privacy') }}?from=page#privacy">Privacy and Policy</a>
+      <a href="{{ url_for('terms') }}?from=page#terms">Terms and Conditions</a>
+    </div>
+</li>
+
+   
+   
+    <!-- ================= SMART WEBSITE SEARCH ================= -->
+
+<div class="smart-search">
+
+    <button
+        id="searchToggle"
+        class="search-icon"
+        aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    <div id="searchBox" class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search banking services..."
+            autocomplete="off">
+
+        <div
+            id="searchResults"
+            class="search-results">
+        </div>
+    </div>
+</div>
+   </nav>
+     
+ <!-- <button onclick="window.location.href = 'admin_login.html'";> Admin Login </button> -->
+
+ <!-- ADMIN LOGIN BUTTON -->
+ <a href="{{ url_for('admin_login') }}" class="admin-login-btn">
+    <i class="fas fa-user-shield"></i>
+    Admin Login
+</a>
+ <!-- <button class="menu-btn" onclick="toggleMenu()">☰</button> -->
+</header>
+
+
+
+
+
+<section class="bank-slider">
+    
+    <div class="slides">
+
+        <div class="slide active">
+            <img src="/static/images/pic1.png"
+                 alt="Modern Bank Building">
+            <div class="slide-content">
+                <h2>Banking You Can Trust</h2>
+                <p>Secure and reliable banking solutions for everyone.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="/static/images/pic2.png"
+                 alt="Digital Banking">
+            <div class="slide-content">
+                <h2>Smart Digital Banking</h2>
+                <p>Experience convenient banking through digital services.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="/static/images/pic3.png"
+                 alt="Mobile Banking">
+            <div class="slide-content">
+                <h2>Banking at Your Fingertips</h2>
+                <p>Access your banking services whenever you need them.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="/static/images/pic4.png"
+                 alt="Customer Service">
+            <div class="slide-content">
+                <h2>Customer First</h2>
+                <p>We are committed to providing helpful customer support.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="/static/images/pic5.png"
+                 alt="Business Banking">
+            <div class="slide-content">
+                <h2>Supporting Businesses</h2>
+                <p>Banking solutions designed to support business growth.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="/static/images/pic6.png"
+                 alt="Savings">
+            <div class="slide-content">
+                <h2>Save for Your Future</h2>
+                <p>Build better financial habits with convenient savings solutions.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="/static/images/pic7.png"
+                 alt="Financial Services">
+            <div class="slide-content">
+                <h2>Complete Financial Solutions</h2>
+                <p>Explore banking services designed for your needs.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="/static/images/pic8.png"
+                 alt="Future Banking">
+            <div class="slide-content">
+                <h2>Banking for a Better Future</h2>
+                <p>Simple, secure and modern banking for tomorrow.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Previous Button -->
+    <button class="slider-btn prev" onclick="changeSlide(-1)">
+        <span translate="no">  ❮ </span>
+    </button>
+
+    <!-- Next Button -->
+    <button class="slider-btn next" onclick="changeSlide(1)">
+        <span translate="no"> ❯</span>
+    </button>
+
+
+    <!-- Dots -->
+    <div class="slider-dots">
+
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- LATEST NOTIFICATIONS MARQUEE -->
+<section class="notification-section">
+
+    <div class="notification-label">
+        <i class="fas fa-bell"></i> LATEST UPDATES
+    </div>
+
+    <div class="notification-marquee">
+
+        <div class="marquee-track">
+
+            <a href="{{ url_for('notifications') }}">
+                🔔 Important Bank Notifications – Click Here
+            </a>
+
+            <span> | </span>
+
+            <a href="{{ url_for('notifications') }}">
+                📢 Latest Bank Announcements – Click Here
+            </a>
+
+            <span> | </span>
+
+            <a href="{{ url_for('notifications') }}">
+                🏦 New Banking Updates Available – Click Here
+            </a>
+
+            <span> | </span>
+
+            <a href="{{ url_for('notifications') }}">
+                🔔 Important Bank Notifications – Click Here
+            </a>
+
+            <span> | </span>
+
+            <a href="{{ url_for('notifications') }}">
+                📢 Latest Bank Announcements – Click Here
+            </a>
+
+            <span> | </span>
+
+            <a href="{{ url_for('notifications') }}">
+                🏦 New Banking Updates Available – Click Here
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h2 class="welcome">WELCOME TO ANISH SOUHARDA CO-OPERATIVE SOCIETY</h2>
+
+        <h1>
+            Banking With
+            <span>Trust & Care</span>
+        </h1>
+
+        <p class="hero-text">
+            A simple and modern banking experience designed
+            to support your savings, financial goals and future.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#services" class="primary-btn">
+                Explore Services
+            </a>
+
+            <a href="#contact" class="secondary-btn">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-card">
+
+        <div class="card-icon">🏦</div>
+
+        <h3>Banking Made Simple</h3>
+
+        <p>
+            Secure. Convenient. Customer focused.
+        </p>
+
+        <div class="mini-details">
+
+            <div>
+                <strong>24/7</strong>
+                <small>Access</small>
+            </div>
+
+            <div>
+                <strong>100%</strong>
+                <small>Care</small>
+            </div>
+
+            <div>
+                <strong>Easy</strong>
+                <small>Banking</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK SERVICES ================= -->
+
+<section class="quick-section">
+
+    <div class="quick-card" >
+        <div class="quick-icon" translate="no">💳</div>
+        <h3>Easy Banking</h3>
+        <p>Convenient banking solutions for everyday needs.</p>
+    </div>
+
+    <div class="quick-card">
+        <div class="quick-icon" translate="no">💰</div>
+        <h3>Smart Savings</h3>
+        <p>Plan and manage your savings with confidence.</p>
+    </div>
+
+    <div class="quick-card">
+        <div class="quick-icon" translate="no">🏠</div>
+        <h3>Loan Support</h3>
+        <p>Financial solutions for personal and business needs.</p>
+    </div>
+
+    <div class="quick-card">
+        <div class="quick-icon" translate="no">🔒</div>
+        <h3>Secure Banking</h3>
+        <p>Your banking experience should always feel secure.</p>
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section about">
+
+    <div class="section-image">
+
+        <div class="image-box">
+
+            <div class="building-icon" translate="no">
+                🏦
+            </div>
+
+            <h3>Anish Souharda</h3>
+
+            <p>
+                Growing together with our community
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="section-content">
+
+        <h2 class="section-label">ABOUT OUR BANK</h2>
+
+        <h2>
+            Banking That
+            <span>Understands You</span>
+        </h2>
+
+        <p>
+            Anish Souharda Cooperative Bank is presented
+            as a modern banking concept focused on trust,
+            convenience and community-oriented financial services.
+        </p>
+
+        <p>
+            Our goal is to provide simple banking solutions
+            that help individuals, families and businesses
+            manage their financial needs.
+        </p>
+
+        <div class="about-points">
+
+            <div>
+                <b>✓</b>
+                Customer-focused service
+            </div>
+
+            <div>
+                <b>✓</b>
+                Convenient banking solutions
+            </div>
+
+            <div>
+                <b>✓</b>
+                Transparent approach
+            </div>
+
+        </div>
+
+    </div>
+       
+
+
+</section>
+<!-- ================= BANK STATISTICS ================= -->
+
+<section class="stats-section">
+
+    <div class="stat-box">
+
+        <div class="stat-icon"><span  translate="no"> 👥</span></div>
+
+        <h2>10K+</h2>
+
+        <p>Happy Customers</p>
+
+    </div>
+
+
+    <div class="stat-box">
+
+        <div class="stat-icon" translate="no">🏦</div>
+
+        <h2>25+</h2>
+
+        <p>Years of Trust</p>
+
+    </div>
+
+
+    <div class="stat-box">
+
+        <div class="stat-icon"translate="no">📍</div>
+
+        <h2>15+</h2>
+
+        <p>Service Locations</p>
+
+    </div>
+
+
+    <div class="stat-box">
+
+        <div class="stat-icon" translate="no">💼</div>
+
+        <h2>20+</h2>
+
+        <p>Banking Services</p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services" class="section services-section">
+
+    <div class="section-heading">
+
+         <h2 class="section-label">OUR SERVICES</h2>
+
+        <h2>
+            Banking Services
+            <span>For You</span>
+        </h2>
+
+        <p>
+            Explore our range of sample banking services.
+        </p>
+
+    </div>
+    
+
+
+    <div class="service-grid">
+
+        <div class="service-card">
+
+            <div class="service-icon"> <span translate="no">👥  </span></div>
+
+            <h3>Savings Account</h3>
+
+            <p>
+                A convenient account concept for managing
+                everyday savings and personal finances.
+            </p>
+
+            
+<a href="{{ url_for('service_savings') }}" class="Learn-btn">
+    Learn More →
+</a>
+
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon" translate="no">🏢</div>
+
+            <h3>Current Account</h3>
+
+            <p>
+                Banking solutions designed for business
+                and regular financial transactions.
+            </p>
+
+            
+<a href="{{ url_for('service_current') }}" class="Learn-btn">
+    Learn More →
+</a>
+
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon" translate="no">📱</div>
+
+            <h3>Digital Banking</h3>
+
+            <p>
+                Access banking information conveniently
+                through modern digital channels.
+            </p>
+
+            
+<a href="{{ url_for('service_digital') }}" class="Learn-btn">
+    Learn More →
+</a>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon" translate="no">💵</div>
+
+            <h3>Money Transfer</h3>
+
+            <p>
+                Convenient transfer solutions for
+                everyday financial requirements.
+            </p>
+
+<a href="{{ url_for('service_money') }}" class="Learn-btn">
+    Learn More →
+</a>
+
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon" translate="no">📄</div>
+
+            <h3>Account Statements</h3>
+
+            <p>
+                Keep track of your account activity
+                and financial transactions.
+            </p>
+
+<a href="{{ url_for('service_account') }}" class="Learn-btn">
+    Learn More →
+</a>
+
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon" translate="no">🤝</div>
+
+            <h3>Customer Support</h3>
+
+            <p>
+                Friendly assistance for your general
+                banking questions and requirements.
+            </p>
+
+<a href="{{ url_for('service_customer') }}" class="Learn-btn">
+    Learn More →
+</a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEPOSITS ================= -->
+
+<section id="deposits" class="section deposits">
+
+    <div class="section-content">
+
+        <h2 class="section-label">DEPOSITS</h2>
+
+        <h2>
+            Build Your
+            <span>Financial Future</span>
+        </h2>
+
+        <p>
+            Saving regularly can help you plan for
+            important future goals.
+        </p>
+
+    </div>
+
+
+    <div class="deposit-grid">
+
+        <div class="deposit-card">
+
+            <span>01</span>
+
+            <h3>Savings Deposit</h3>
+
+            <p>
+                Designed for regular personal savings
+                and convenient account management.
+            </p>
+
+        </div>
+
+
+        <div class="deposit-card">
+
+            <span>02</span>
+
+            <h3>Fixed Deposit</h3>
+
+            <p>
+                A sample fixed-term deposit concept
+                for planned savings.
+            </p>
+
+        </div>
+
+
+        <div class="deposit-card">
+
+            <span>03</span>
+
+            <h3>Recurring Deposit</h3>
+
+            <p>
+                Save a fixed amount regularly toward
+                a planned financial goal.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOANS ================= -->
+
+<section id="loans" class="section loans">
+
+    <div class="section-heading">
+
+        <h2 class="section-label">LOAN SERVICES</h2>
+
+        <h2>
+            Financial Support
+            <span>When You Need It</span>
+            <p>Explore our general loan solution Designed
+                for different financial requirements.
+            </p>
+        </h2>
+
+    </div>
+
+
+    <div class="loan-grid">
+
+        <div class="loan-card">
+
+            <div class="loan-number">01</div>
+
+            <h3>Personal Loan</h3>
+
+            <p>
+                Sample financial support for eligible
+                personal requirements.
+            </p>
+            
+<a href="{{ url_for('loan_details') }}" class="learn-btn">
+    Learn More →
+</a>
+
+        </div>
+
+
+        <div class="loan-card">
+
+            <div class="loan-number">02</div>
+
+            <h3>Business Loan</h3>
+
+            <p>
+                Sample funding support concept for
+                business-related requirements.
+            </p>
+           
+<a href="{{ url_for('loan_business') }}" class="learn-btn">
+    Learn More →
+</a>
+
+
+        </div>
+
+
+        <div class="loan-card">
+
+            <div class="loan-number">03</div>
+
+            <h3>Education Loan</h3>
+
+            <p>
+                Sample financial assistance concept
+                for educational needs.
+            </p>
+            
+<a href="{{ url_for('loan_education') }}" class="learn-btn">
+    Learn More →
+</a>
+
+        </div>
+        <!-- Home Loan -->
+    <div class="loan-card">
+
+        <div class="loan-number">04</div>
+
+        <h3>Home Loan</h3>
+
+        <p>
+            Financial support for eligible customers
+            to purchase, construct, or improve their home.
+        </p>
+
+        
+<a href="{{ url_for('loan_home') }}" class="learn-btn">
+    Learn More →
+</a>
+
+    </div>
+
+
+    <!-- Vehicle Loan -->
+    <div class="loan-card">
+
+        <div class="loan-number">05</div>
+
+        <h3>Vehicle Loan</h3>
+
+        <p>
+            Financial assistance for eligible customers
+            to purchase a new or used vehicle.
+        </p>
+
+      
+<a href="{{ url_for('loan_vehicle') }}" class="learn-btn">
+    Learn More →
+</a>
+
+
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+<!-- ================= LOAN CALCULATOR ================= -->
+
+<section id="emi-calculator" class="calculator-section">
+
+    <div class="calculator-heading">
+
+        <h1 class="section-label">
+            SMART BANKING TOOL
+        </h1>
+
+        <h2>
+            Loan EMI
+            <span>Calculator</span>
+        </h2>
+
+        <p>
+            Enter the loan details to estimate
+            the monthly EMI.
+        </p>
+
+    </div>
+
+    <div class="calculator">
+
+        <label>Loan Amount</label>
+
+        <input
+            type="text"
+            id="loanAmount"
+            placeholder="Enter amount">
+
+        <label>Interest Rate (%)</label>
+
+        <input
+            type="number"
+            id="interestRate"
+            placeholder="Example: 8.5">
+
+        <label>Loan Period (Years)</label>
+
+        <input
+            type="number"
+            id="loanYears"
+            placeholder="Example: 5">
+
+        <button type="button" onclick="calculateEMI()">
+            Calculate EMI
+        </button>
+
+        <button type="button" onclick="resetCalculator()">
+            Refresh all
+        </button>
+
+        <div class="emi-result">
+
+            <p>Estimated Monthly EMI</p>
+
+            <h2 id="emiResult">₹0</h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOAN ELIGIBILITY CHECKER ================= -->
+
+<section class="loan-checker-section" id="loan-eligibility">
+
+    <div class="loan-checker-container">
+
+        <div class="loan-checker-heading">
+
+            <span>💰 Smart Banking Tool</span>
+
+            <h2>Check Your Approximate Loan Eligibility</h2>
+
+            <p>
+                Enter your details to check your approximate
+                loan eligibility and EMI.
+            </p>
+
+        </div>
+
+        <div class="loan-checker-card">
+
+            <div class="loan-form">
+
+                <div class="loan-input">
+                    <label>Age</label>
+                    <input type="number" id="loanAge"
+                        placeholder="Enter your age">
+                </div>
+
+                <div class="loan-input">
+                    <label>Monthly Income</label>
+                    <input type="number" id="monthlyIncome"
+                        placeholder="Enter monthly income">
+                </div>
+
+                <div class="loan-input">
+
+                    <label>Employment Type</label>
+
+                    <select id="employmentType" required>
+
+                        <option value="">Select Employment Type</option>
+                        <option value="government">Government Employee</option>
+                        <option value="private">Private Employee</option>
+                        <option value="self">Self-Employed</option>
+                        <option value="business">Business Owner</option>
+                        <option value="professional">Professional</option>
+                        <option value="farmer">Farmer / Agriculture</option>
+                        <option value="pensioner">Pensioner</option>
+                        <option value="student">Student</option>
+                        <option value="other">Other</option>
+
+                    </select>
+
+                </div>
+
+                <div class="loan-input">
+                    <label>Required Loan Amount</label>
+                    <input type="number" id="requiredLoan"
+                        placeholder="Enter loan amount">
+                </div>
+
+                <div class="loan-input">
+
+                    <label>Loan Tenure</label>
+
+                    <select id="loanTenure">
+
+                        <option value="">Select tenure</option>
+                        <option value="12">1 Year</option>
+                        <option value="24">2 Years</option>
+                        <option value="36">3 Years</option>
+                        <option value="60">5 Years</option>
+                        <option value="84">7 Years</option>
+                        <option value="120">10 Years</option>
+
+                    </select>
+
+                </div>
+
+                <button type="button" class="check-loan-btn"
+                    onclick="checkLoanEligibility()">
+
+                    Check Loan Eligibility
+
+                </button>
+
+            </div>
+
+            <!-- RESULT -->
+
+            <div class="loan-result" id="loanResult">
+
+                <h3>📊 Loan Eligibility Result</h3>
+
+                <div class="result-item">
+                    <span>Estimated Eligible Amount</span>
+                    <strong id="eligibleAmount">₹0</strong>
+                </div>
+
+                <div class="result-item">
+                    <span>Estimated EMI</span>
+                    <strong id="estimatedEMI">₹0/month</strong>
+                </div>
+
+                <div class="result-item">
+                    <span>Eligibility Status</span>
+                    <strong id="eligibilityStatus">-</strong>
+                </div>
+
+                <p class="loan-disclaimer">
+                    This result is indicative only. Final approval
+                    is subject to bank policies and verification.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SMART BANKING PRODUCT FINDER ================= -->
+
+<section class="product-finder">
+
+    <h2>Find the Right Banking Product for You</h2>
+
+    <p>Select one option that matches your requirement.</p>
+
+    <div class="product-options">
+
+        <label class="product-option">
+            <input type="radio" name="bankingProduct" value="save">
+            <span>💰 I want to save money</span>
+        </label>
+
+        <label class="product-option">
+            <input type="radio" name="bankingProduct" value="home">
+            <span>🏠 I want a home loan</span>
+        </label>
+
+        <label class="product-option">
+            <input type="radio" name="bankingProduct" value="education">
+            <span>🎓 I want an education loan</span>
+        </label>
+
+        <label class="product-option">
+            <input type="radio" name="bankingProduct" value="vehicle">
+            <span>🚗 I want a vehicle loan</span>
+        </label>
+
+        <label class="product-option">
+            <input type="radio" name="bankingProduct" value="invest">
+            <span>📈 I want to invest</span>
+        </label>
+
+        <label class="product-option">
+            <input type="radio" name="bankingProduct" value="monthly">
+            <span>🏦 I want regular monthly savings</span>
+        </label>
+
+    </div>
+
+    <button type="button" class="find-btn" onclick="findProduct()">
+        Find My Product
+    </button>
+
+    <!-- RESULT -->
+
+    <div id="productResult" class="product-result">
+
+        <h3 id="productName"></h3>
+
+        <p id="productDescription"></p>
+
+        <div class="product-buttons">
+
+            <button type="button" onclick="viewDetails()">
+                View Details
+            </button>
+
+            <button type="button" onclick="checkDocuments()">
+                Check Documents
+            </button>
+
+            <!-- IMPORTANT: DIFFERENT FUNCTION NAME -->
+
+            <button type="button" onclick="openLoanCalculator()">
+                Calculate EMI
+            </button>
+
+           <!-- <button type="button" onclick="contactBank()">
+                Contact Bank
+            </button> -->
+
+        </div>
+
+        <div id="productMessage"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+let selectedProduct = "";
+
+
+/* FIND PRODUCT */
+
+function findProduct() {
+
+    let selected = document.querySelector(
+        'input[name="bankingProduct"]:checked'
+    );
+
+    if (!selected) {
+        alert("Please select one option.");
+        return;
+    }
+
+    selectedProduct = selected.value;
+
+    let name = "";
+    let description = "";
+
+    if (selectedProduct === "save") {
+
+        name = "Savings Account";
+
+        description =
+        "A suitable account for safely saving your money and managing your daily banking needs.";
+
+    }
+
+    else if (selectedProduct === "home") {
+
+        name = "Home Loan";
+
+        description =
+        "A suitable loan option for customers planning to purchase or construct their dream home.";
+
+    }
+
+    else if (selectedProduct === "education") {
+
+        name = "Education Loan";
+
+        description =
+        "Suitable for students pursuing higher education and professional courses.";
+
+    }
+
+    else if (selectedProduct === "vehicle") {
+
+        name = "Vehicle Loan";
+
+        description =
+        "A suitable financing option for purchasing a new or used vehicle.";
+
+    }
+
+    else if (selectedProduct === "invest") {
+
+        name = "Investment / Deposit Plan";
+
+        description =
+        "Suitable for customers who want to grow their savings through investment and deposit options.";
+
+    }
+
+    else if (selectedProduct === "monthly") {
+
+        name = "Recurring Deposit";
+
+        description =
+        "Suitable for customers who want to save a fixed amount regularly every month.";
+
+    }
+
+    document.getElementById("productName").innerText =
+        "Recommended Product: " + name;
+
+    document.getElementById("productDescription").innerText =
+        description;
+
+    document.getElementById("productResult").style.display = "block";
+
+    document.getElementById("productMessage").innerHTML = "";
+
+}
+
+
+/* VIEW DETAILS */
+
+function viewDetails() {
+
+    if (selectedProduct === "save") {
+        window.location.href = "{{ url_for('service_savings') }}";
+    }
+
+    else if (selectedProduct === "home") {
+        window.location.href = "{{ url_for('loan_home') }}";
+    }
+
+    else if (selectedProduct === "education") {
+        window.location.href = "{{ url_for('loan_education') }}";
+    }
+
+    else if (selectedProduct === "vehicle") {
+        window.location.href = "{{ url_for('loan_vehicle') }}";
+    }
+
+    else if (selectedProduct === "invest") {
+        window.location.href = "{{ url_for('service_investment') }}";
+    }
+
+    else if (selectedProduct === "monthly") {
+        window.location.href = "{{ url_for('service_recurring') }}";
+    }
+
+}
+
+
+/* CHECK DOCUMENTS */
+
+function checkDocuments() {
+
+    let message = "";
+
+    if (selectedProduct === "education") {
+
+        message =
+        "Documents: Aadhaar Card, PAN Card, Academic Certificates, Admission Letter and Income Proof.";
+
+    }
+
+    else if (selectedProduct === "home") {
+
+        message =
+        "Documents: Aadhaar Card, PAN Card, Address Proof, Income Proof and Property Documents.";
+
+    }
+
+    else if (selectedProduct === "vehicle") {
+
+        message =
+        "Documents: Aadhaar Card, PAN Card, Address Proof, Income Proof and Vehicle Quotation.";
+
+    }
+
+    else {
+
+        message =
+        "Documents: Aadhaar Card, PAN Card, Address Proof and required bank application form.";
+
+    }
+
+    document.getElementById("productMessage").innerHTML =
+        "<strong>Required Documents:</strong><br>" + message;
+
+}
+
+
+/* LOAN EMI CALCULATION */
+
+function calculateEMI() {
+
+    let amount = document.getElementById("loanAmount").value;
+
+    let rate = document.getElementById("interestRate").value;
+
+    let years = document.getElementById("loanYears").value;
+
+    let principal = parseFloat(amount.replace(/,/g, ""));
+
+    let annualRate = parseFloat(rate);
+
+    let period = parseInt(years);
+
+    if (
+        isNaN(principal) ||
+        isNaN(annualRate) ||
+        isNaN(period) ||
+        principal <= 0 ||
+        annualRate < 0 ||
+        period <= 0
+    ) {
+
+        alert("Please enter valid loan details.");
+        return;
+
+    }
+
+    let monthlyRate = annualRate / 12 / 100;
+
+    let months = period * 12;
+
+    let emi;
+
+    if (monthlyRate === 0) {
+
+        emi = principal / months;
+
+    }
+
+    else {
+
+        emi = principal * monthlyRate *
+            Math.pow(1 + monthlyRate, months) /
+            (Math.pow(1 + monthlyRate, months) - 1);
+
+    }
+
+    document.getElementById("emiResult").innerText =
+        "₹" + emi.toLocaleString("en-IN", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+}
+
+
+/* RESET EMI CALCULATOR */
+
+function resetCalculator() {
+
+    document.getElementById("loanAmount").value = "";
+
+    document.getElementById("interestRate").value = "";
+
+    document.getElementById("loanYears").value = "";
+
+    document.getElementById("emiResult").innerText = "₹0";
+
+}
+
+
+/* PRODUCT FINDER: OPEN LOAN EMI SECTION */
+
+function openLoanCalculator() {
+
+    window.location.href = "/#emi-calculator";
+
+}
+
+/* CONTACT BANK */
+
+// function contactBank() {
+//     window.location.href ="/#contact";
+// }
+</script>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why-section">
+
+    <div class="why-content">
+
+        <h2 class="section-label"  style="color: #5eead4;">WHY CHOOSE US</h2>
+
+        <h2>
+            A Better Way
+            <span><h2 style="color: #5eead4;">To Bank</h2></span>
+        </h2>
+
+        <p>
+            Our website concept focuses on creating
+            a simple, attractive and easy-to-understand
+            banking experience.
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div>
+            <strong>01</strong>
+            <h3>Trust</h3>
+            <p>Building relationships through transparency.</p>
+        </div>
+
+        <div>
+            <strong>02</strong>
+            <h3>Convenience</h3>
+            <p>Simple solutions for everyday banking.</p>
+        </div>
+
+        <div>
+            <strong>03</strong>
+            <h3>Community</h3>
+            <p>Supporting people and local communities.</p>
+        </div>
+
+        <div>
+            <strong>04</strong>
+            <h3>Innovation</h3>
+            <p>Using modern ideas to improve banking.</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= FAQ ================= -->
+
+<section class="faq-section" id="faq-section">
+
+    <div class="section-heading">
+
+        <h2 class="section-label">
+            FAQ
+        </h2>
+
+        <h2>
+            Frequently Asked
+            <span>Questions</span>
+        </h2>
+
+    </div>
+
+
+    <div class="faq-container">
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+
+                What services does the bank provide?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    The website presents sample services
+                    such as savings accounts, current accounts,
+                    digital banking, money transfer,
+                    account statements and customer support.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+
+                What types of loans are available?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    This project demonstrates personal,
+                    business and education loan categories.
+                    Actual loan products should be confirmed
+                    with the bank.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+
+                How can I contact customer support?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Customers can use the contact section
+                    of the website to view sample contact
+                    information and submit an enquiry.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+
+                Can I calculate my loan EMI?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Yes. The website includes a sample
+                    EMI calculator for educational purposes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- IMPORTANT BANKING LINKS SECTION -->
+
+<section class="bank-links-section" id="important-links">
+
+    <div class="bank-links-header">
+        <span class="bank-links-label">QUICK ACCESS</span>
+        <h2>Important Banking Links</h2>
+        <p>
+            Access trusted banking, government and financial services
+            through these useful links.
+        </p>
+    </div>
+
+    <div class="bank-links-grid">
+
+        <a href="https://www.rbi.org.in/"
+           target="_blank" rel="noopener noreferrer"
+           class="bank-link-card">
+            <div class="bank-link-icon">
+                <i class="fas fa-building-columns"></i>
+            </div>
+            <div class="bank-link-info">
+                <h3>Reserve Bank of India</h3>
+                <p>Banking regulations and official information</p>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square bank-link-arrow"></i>
+        </a>
+
+        <a href="https://www.npci.org.in/"
+           target="_blank" rel="noopener noreferrer"
+           class="bank-link-card">
+            <div class="bank-link-icon">
+                <i class="fas fa-money-bill-transfer"></i>
+            </div>
+            <div class="bank-link-info">
+                <h3>NPCI</h3>
+                <p>UPI, IMPS, RuPay and payment services</p>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square bank-link-arrow"></i>
+        </a>
+
+        <a href="https://www.uidai.gov.in/"
+           target="_blank" rel="noopener noreferrer"
+           class="bank-link-card">
+            <div class="bank-link-icon">
+                <i class="fas fa-id-card"></i>
+            </div>
+            <div class="bank-link-info">
+                <h3>UIDAI</h3>
+                <p>Aadhaar services and information</p>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square bank-link-arrow"></i>
+        </a>
+
+        <a href="https://www.incometax.gov.in/"
+           target="_blank" rel="noopener noreferrer"
+           class="bank-link-card">
+            <div class="bank-link-icon">
+                <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <div class="bank-link-info">
+                <h3>Income Tax Department</h3>
+                <p>Tax filing and online tax services</p>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square bank-link-arrow"></i>
+        </a>
+
+        <a href="https://www.digilocker.gov.in/"
+           target="_blank" rel="noopener noreferrer"
+           class="bank-link-card">
+            <div class="bank-link-icon">
+                <i class="fas fa-folder-open"></i>
+            </div>
+            <div class="bank-link-info">
+                <h3>DigiLocker</h3>
+                <p>Access digital documents securely</p>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square bank-link-arrow"></i>
+        </a>
+
+        <a href="https://www.cibil.com/"
+           target="_blank" rel="noopener noreferrer"
+           class="bank-link-card">
+            <div class="bank-link-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="bank-link-info">
+                <h3>CIBIL</h3>
+                <p>Credit scores and credit reports</p>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square bank-link-arrow"></i>
+        </a>
+
+        <a href="https://www.sebi.gov.in/"
+           target="_blank" rel="noopener noreferrer"
+           class="bank-link-card">
+            <div class="bank-link-icon">
+                <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="bank-link-info">
+                <h3>SEBI</h3>
+                <p>Investment and securities information</p>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square bank-link-arrow"></i>
+        </a>
+
+        <a href="https://www.irdai.gov.in/"
+           target="_blank" rel="noopener noreferrer"
+           class="bank-link-card">
+            <div class="bank-link-icon">
+                <i class="fas fa-shield-halved"></i>
+            </div>
+            <div class="bank-link-info">
+                <h3>IRDAI</h3>
+                <p>Insurance regulations and information</p>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square bank-link-arrow"></i>
+        </a>
+
+    </div>
+
+    <div class="bank-links-footer">
+        <i class="fas fa-circle-info"></i>
+        You will be redirected to the respective official website.
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section contact">
+
+    <div class="contact-info">
+
+        <h2 class="section-label">CONTACT US</h2>
+
+        <h2>
+            We're Here
+            <span>To Help</span>
+        </h2>
+
+        <p>
+            Have a question? Send us your details
+            and our team can assist you.
+        </p>
+
+        <div class="contact-item">
+           <h3 translate="no"> <b>📍 Address</b></h3>
+            <h3> Address, Karnataka</h3>
+        </div>
+
+        <div class="contact-item">
+            <h3 translate="no"> <b>📞 Phone</b></h3>
+            <h3>+91 892347786</h3>
+        </div>
+
+        <div class="contact-item">
+            <h3 translate="no"><b>✉ Email</b></h3>
+            <h3>anish@gmail.com</h3>
+        </div>
+     <section > 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61527.57879038587!2d74.96931567168397!3d15.458933056558543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8cd62d889aba7%3A0x5a4f2144717bcf70!2sDharwad%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1789645451308!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </section>
+
+    </div>
+
+
+    <section class="branch-visit-section" id="branch-visit">
+
+    <div class="branch-visit-heading">
+        <h2 class="section-label">BRANCH VISIT</h2>
+
+        <h2>
+            Schedule a
+            <span>Branch Visit</span>
+        </h2>
+
+        <p>
+            Plan your visit to our branch at a convenient date and time.
+            Fill in the details below and our team will contact you.
+        </p>
+    </div>
+
+    <div class="branch-visit-container">
+
+        <div class="branch-visit-info">
+
+            <div class="visit-icon" translate="no">🏦</div>
+
+            <h3>Visit Our Branch</h3>
+
+            <p>
+                Schedule an appointment with our banking team
+                for personalized assistance.
+            </p>
+
+            <div class="visit-points">
+
+                <div>
+                    <span translate="no">✓</span>
+                    Easy appointment scheduling
+                </div>
+
+                <div>
+                    <span translate="no">✓</span>
+                    Choose your preferred date
+                </div>
+
+                <div>
+                    <span translate="no">✓</span>
+                    Select a convenient time
+                </div>
+
+                <div>
+                    <span translate="no">✓</span>
+                    Quick customer assistance
+                </div>
+
+            </div>
+
+        </div>
+
+        <form class="branch-visit-form"
+              action="{{ url_for('schedule_branch_visit') }}"
+              method="POST">
+
+            <h3>Schedule a Branch Visit</h3>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="visitorName"
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input
+                    type="tel"
+                    id="visitorPhone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="purpose">Purpose</label>
+                <textarea
+                    id="visitPurpose"
+                    name="purpose"
+                    rows="4"
+                    placeholder="Enter the purpose of your visit"
+                    required></textarea>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="preferred_Date">Preferred Date</label>
+                    <input
+                        type="date"
+                        id="preferredDate"
+                        name="preferred_date"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferred_Time">Preferred Time</label>
+                    <input
+                        type="time"
+                        id="preferredTime"
+                        name="preferred_time"
+                        required>
+                </div>
+
+            </div>
+
+            <button type="submit" class="branch-submit-btn">
+                Schedule Visit
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+</section>
+
+
+
+    <!-- ================= CO-OP ASSIST CHATBOT ================= -->
+
+    <div class="chatbot-container">
+
+        <!-- Chat Button -->
+        <button class="chatbot-button" onclick="toggleChat()" aria-label="Open banking assistant">
+            💬
+        </button>
+
+
+        <!-- Chat Box -->
+        <div class="chatbot-box" id="chatbotBox">
+
+            <!-- Header -->
+            <div class="chatbot-header">
+
+                <div>
+                    <h3>Co-op Assist</h3>
+                    <span>Your Banking Guide</span>
+                </div>
+
+                <button onclick="toggleChat()" aria-label="Close chat">
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- Messages -->
+            <div class="chatbot-messages" id="chatMessages">
+
+                <div class="bot-message">
+
+                    👋 Hello! I'm <b>Co-op Assist</b>.<br>
+
+                    Your Banking Guide.<br><br>
+
+                    Select a question below to get quick banking information.
+
+                </div>
+
+            </div>
+
+
+            <!-- Questions -->
+            <div class="chatbot-questions">
+
+                <button onclick="askQuestion('fd')">
+                    What is an FD?
+                </button>
+
+                <button onclick="askQuestion('rd')">
+                    What is an RD?
+                </button>
+
+                <button onclick="askQuestion('emi')">
+                    How does EMI work?
+                </button>
+
+                <button onclick="askQuestion('documents')">
+                    Documents required for a loan?
+                </button>
+
+                <button onclick="askQuestion('hours')">
+                    What are the banking hours?
+                </button>
+
+                <button onclick="askQuestion('contact')">
+                    How can I contact the bank?
+                </button>
+
+                <button onclick="askQuestion('accounts')">
+                    What types of accounts are available?
+                </button>
+
+                <button onclick="askQuestion('loan')">
+                    How do I apply for a loan?
+                </button>
+
+                <button onclick="askQuestion('fraud')">
+                    What should I do if I suspect fraud?
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+<!-- ============= Scoll to top ============= -->
+<button id="goTopBtn" title="Go to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    ↑
+</button>
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-logo">
+
+            <div class="bank-logo">AS</div>
+
+            <div>
+                <h3>Anish Souharda</h3>
+                <p>Cooperative Bank</p>
+            </div>
+
+        </div>
+
+        <p>
+            Banking with trust, simplicity and care.
+        </p>
+         <div class="social-icons"> 
+
+    <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" class="instagram" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" class="youtube" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+</div> 
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Quick Links</h4>
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Services</h4>
+
+        <a href="#services">Savings</a>
+        <a href="#deposits">Deposits</a>
+        <a href="#loans">Loans</a>
+        <a href="#services">Digital Banking</a>
+
+    </div>
+
+</footer>
+
+
+<footer class="copyright">
+
+    <h3>
+     @2026-  All rights Reserved
+    </h3>
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

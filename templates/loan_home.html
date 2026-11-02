@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home Loan | Anish Souharda Cooperative Bank</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
+
+</head>
+
+<body>
+ <!-- ================= NAVIGATION ================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="bank-logo">
+            AS
+        </div>
+
+        <div>
+            <h2>Anish Souharda</h2>
+            <span><h3> Co-operative Society</h3 ></span>
+        </div>
+
+    </div>
+
+    <nav class="navbar">
+
+         
+<a href="{{ url_for('home') }}?from=page#home">Home</a>
+<a href="{{ url_for('home') }}?from=page#about">About</a>
+<a href="{{ url_for('home') }}?from=page#services">Services</a>
+<a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+<a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+<a href="{{ url_for('home') }}?from=page#contact">Contacts</a>
+<a href="{{ url_for('board_directors') }}?from=page#board_directors">Board of Directors</a>
+<a href="{{ url_for('gallery') }}?from=page#gallery">Gallery</a>
+      <li class="others-dropdown" >
+    <a href="javascript:void(0);" onclick="toggleOthersMenu()">Others </a>
+
+    <div class="others-menu" id="othersMenu">
+      <a href="{{ url_for('privacy') }}?from=page#privacy">Privacy and Policy</a>
+      <a href="{{ url_for('terms') }}?from=page#terms">Terms and Conditions</a>
+    </div>
+</li>
+      
+        
+
+        
+    </nav>
+   
+    
+   
+
+   
+        </div>
+
+    <!-- <button class="menu-btn" onclick="toggleMenu()">☰</button> -->
+    <!--  TRANSLATE-->
+    
+
+
+</header>
+<!-- ================= ANIMATED BANKING BACKGROUND ================= -->
+
+<div class="bank-animation-bg" aria-hidden="true">
+
+    <!-- Soft glowing circles -->
+    <div class="bank-glow glow-one"></div>
+    <div class="bank-glow glow-two"></div>
+    <div class="bank-glow glow-three"></div>
+
+    <!-- Floating banking icons -->
+    <div class="bank-float bank-1">₹</div>
+    <div class="bank-float bank-2">🪙</div>
+    <div class="bank-float bank-3">💰</div>
+    <div class="bank-float bank-4">🏦</div>
+    <div class="bank-float bank-5">💳</div>
+    <div class="bank-float bank-6">₹</div>
+    <div class="bank-float bank-7">🪙</div>
+    <div class="bank-float bank-8">💵</div>
+    <div class="bank-float bank-9">🏧</div>
+    <div class="bank-float bank-10">📈</div>
+    <div class="bank-float bank-11">₹</div>
+    <div class="bank-float bank-12">💰</div>
+
+    <!-- Decorative banking circles -->
+    <div class="bank-circle circle-one"></div>
+    <div class="bank-circle circle-two"></div>
+    <div class="bank-circle circle-three"></div>
+
+</div>
+
+    <!-- ================= PAGE ================= -->
+
+    <main class="details-page" id="home-loan">
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="details-hero">
+
+            <div class="details-icon">
+                🏠
+            </div>
+
+            <h1>Home Loan</h1>
+
+            <p>
+                Turn your dream of owning a home into reality with
+                suitable home loan solutions designed to support
+                your housing needs.
+            </p>
+
+        </section>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="details-container">
+
+
+            <!-- ================= INTRODUCTION ================= -->
+
+            <section class="details-intro">
+
+                <h2>What is a Home Loan?</h2>
+
+                <p>
+                    A home loan is a financial facility that helps
+                    eligible customers meet the cost of purchasing,
+                    constructing or improving a residential property,
+                    subject to the bank's applicable policies.
+                </p>
+
+                <p>
+                    Anish Souharda Cooperative Bank provides home loan
+                    facilities to support eligible customers in achieving
+                    their residential housing goals while allowing them
+                    to repay the approved loan amount through suitable
+                    instalments.
+                </p>
+
+            </section>
+
+
+            <!-- ================= INFORMATION CARDS ================= -->
+
+            <section class="info-grid">
+
+
+                <!-- PURPOSE -->
+
+                <div class="info-card">
+
+                    <h3>Loan Purpose</h3>
+
+                    <ul>
+
+                        <li>Purchase of an eligible residential property.</li>
+
+                        <li>Construction of a residential house.</li>
+
+                        <li>Purchase of a residential plot, where applicable.</li>
+
+                        <li>Home improvement or renovation, where applicable.</li>
+
+                        <li>Other approved housing requirements.</li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- BENEFITS -->
+
+                <div class="info-card">
+
+                    <h3>Benefits</h3>
+
+                    <ul>
+
+                        <li>Helps make home ownership more achievable.</li>
+
+                        <li>Supports eligible housing requirements.</li>
+
+                        <li>Structured repayment through instalments.</li>
+
+                        <li>Suitable loan options based on eligibility.</li>
+
+                        <li>Helps manage the cost of a home over time.</li>
+
+                        <li>Assistance from bank officials during processing.</li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ELIGIBILITY -->
+
+                <div class="info-card">
+
+                    <h3>Eligibility</h3>
+
+                    <ul>
+
+                        <li>Eligible Indian citizens.</li>
+
+                        <li>Salaried individuals.</li>
+
+                        <li>Self-employed individuals.</li>
+
+                        <li>Business owners, where applicable.</li>
+
+                        <li>Applicants with suitable repayment capacity.</li>
+
+                        <li>Other eligible customers as per bank guidelines.</li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- DOCUMENTS -->
+
+                <div class="info-card">
+
+                    <h3>Documents Required</h3>
+
+                    <ul>
+
+                        <li>Valid identity proof.</li>
+
+                        <li>Valid address proof.</li>
+
+                        <li>Recent passport-size photographs.</li>
+
+                        <li>Income and financial documents.</li>
+
+                        <li>Property-related documents, wherever required.</li>
+
+                        <li>Bank account and other supporting documents.</li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= HIGHLIGHT ================= -->
+
+            <section class="highlight-box">
+
+                <h3>Why Choose a Home Loan?</h3>
+
+                <p>
+                    Buying or constructing a home is an important
+                    financial decision. A home loan can help eligible
+                    customers manage the cost of their housing
+                    requirement while repaying the approved amount
+                    through a planned repayment schedule.
+                </p>
+
+            </section>
+
+
+            <!-- ================= LOAN FEATURES ================= -->
+
+            <section class="info-grid">
+
+
+                <div class="info-card">
+
+                    <h3>Home Loan Features</h3>
+
+                    <ul>
+
+                        <li>Finance for eligible residential requirements.</li>
+
+                        <li>Repayment through regular instalments.</li>
+
+                        <li>Loan amount based on eligibility and requirement.</li>
+
+                        <li>Repayment period according to applicable rules.</li>
+
+                        <li>Property assessment as required.</li>
+
+                        <li>Terms based on the bank's prevailing policies.</li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>Suitable For</h3>
+
+                    <ul>
+
+                        <li>First-time home buyers.</li>
+
+                        <li>Customers purchasing a residential property.</li>
+
+                        <li>Customers constructing a house.</li>
+
+                        <li>Eligible home renovation requirements.</li>
+
+                        <li>Families planning residential property ownership.</li>
+
+                        <li>Other approved housing requirements.</li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= EMI ================= -->
+
+            <section class="highlight-box">
+
+                <h3>Home Loan EMI</h3>
+
+                <p>
+                    The monthly EMI depends on factors such as the
+                    approved loan amount, applicable interest rate and
+                    repayment period. Customers should select a
+                    repayment plan that is suitable for their financial
+                    capacity.
+                </p>
+
+            </section>
+
+
+            <!-- ================= THINGS TO REMEMBER ================= -->
+
+            <section class="info-grid">
+
+
+                <div class="info-card">
+
+                    <h3>Things to Remember</h3>
+
+                    <ul>
+
+                        <li>Choose a property according to your budget.</li>
+
+                        <li>Check your repayment capacity before applying.</li>
+
+                        <li>Understand the applicable interest rate.</li>
+
+                        <li>Review the loan tenure carefully.</li>
+
+                        <li>Keep property documents ready.</li>
+
+                        <li>Read all loan terms and conditions carefully.</li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>Application Process</h3>
+
+                    <ul>
+
+                        <li>Submit the completed home loan application.</li>
+
+                        <li>Provide identity and address documents.</li>
+
+                        <li>Submit income and financial details.</li>
+
+                        <li>Provide required property documents.</li>
+
+                        <li>The bank verifies eligibility and documents.</li>
+
+                        <li>Loan approval is subject to applicable conditions.</li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= IMPORTANT INFORMATION ================= -->
+
+            <section class="highlight-box">
+
+                <h3>Important Information</h3>
+
+                <p>
+                    Interest rates, loan amounts, repayment periods,
+                    processing charges, property requirements, security
+                    conditions and eligibility criteria are subject to
+                    the bank's prevailing rules and policies. Please
+                    contact the bank for the latest applicable terms
+                    and conditions before applying.
+                </p>
+
+            </section>
+
+
+            <!-- ================= BACK BUTTON ================= -->
+
+          
+<a href="{{ url_for('home') }}?from=page#loans" class="back-btn">
+    ← Back to Loans
+</a>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-logo">
+
+            <div class="bank-logo">AS</div>
+
+            <div>
+                <h3>Anish Souharda</h3>
+                <p>Cooperative Bank</p>
+            </div>
+
+        </div>
+
+        <p>
+            Banking with trust, simplicity and care.
+        </p>
+         <div class="social-icons"> 
+
+    <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" class="instagram" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" class="youtube" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+</div> 
+    </div>
+
+
+   <div class="footer-links">
+   <h4>Quick Links</h4>
+        <a href="{{ url_for('home') }}?from=page" >Home</a>
+        <a href="{{ url_for('home') }}?from=page#about">About</a>
+        <a href="{{ url_for('home') }}?from=page#services">Services</a>
+        <a href="{{ url_for('home') }}?from=page#contact">Contact</a>
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Services</h4>
+        <a href="{{ url_for('home') }}?from=page#services">Savings</a>
+        <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+        <a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+        <a href="{{ url_for('home') }}?from=page#services">Digital Banking</a>
+        <a href="{{ url_for('home') }}?from=page#faq-section">FAQ</a>
+     
+    </div>
+    </div>
+</footer>
+<div class="copyright">
+    <h3>
+     @2026-  All rights Reserved
+    </h3>
+</div>   
+   <!-- Existing JavaScript -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

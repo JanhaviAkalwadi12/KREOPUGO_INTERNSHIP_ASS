@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+</head>
+<body>
+    <!-- ================= NAVIGATION ================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="bank-logo">
+            AS
+        </div>
+
+        <div>
+            <h2>Anish Souharda</h2>
+            <span><h3> Co-operative Society</h3 ></span>
+        </div>
+
+    </div>
+
+    <nav class="navbar">
+
+           
+<a href="{{ url_for('home') }}?from=page#home">Home</a>
+<a href="{{ url_for('home') }}?from=page#about">About</a>
+<a href="{{ url_for('home') }}?from=page#services">Services</a>
+<a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+<a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+<a href="{{ url_for('home') }}?from=page#contact">Contacts</a>
+<a href="{{ url_for('board_directors') }}?from=page#board_directors">Board of Directors</a>
+<a href="{{ url_for('gallery') }}?from=page#gallery">Gallery</a>
+      <li class="others-dropdown" >
+    <a href="javascript:void(0);" onclick="toggleOthersMenu()">Others </a>
+
+    <div class="others-menu" id="othersMenu">
+      <a href="{{ url_for('privacy') }}?from=page#privacy">Privacy and Policy</a>
+      <a href="{{ url_for('terms') }}?from=page#terms">Terms and Conditions</a>
+    </div>
+</li>
+       
+        
+    </nav>   
+        </div>
+
+    <!-- <button class="menu-btn" onclick="toggleMenu()">☰</button> -->
+    <!--  TRANSLATE-->
+    
+
+
+</header>
+
+<!-- ================= ANIMATED BANKING BACKGROUND ================= -->
+
+<div class="bank-animation-bg" aria-hidden="true">
+
+    <!-- Soft glowing circles -->
+    <div class="bank-glow glow-one"></div>
+    <div class="bank-glow glow-two"></div>
+    <div class="bank-glow glow-three"></div>
+
+    <!-- Floating banking icons -->
+    <div class="bank-float bank-1">₹</div>
+    <div class="bank-float bank-2">🪙</div>
+    <div class="bank-float bank-3">💰</div>
+    <div class="bank-float bank-4">🏦</div>
+    <div class="bank-float bank-5">💳</div>
+    <div class="bank-float bank-6">₹</div>
+    <div class="bank-float bank-7">🪙</div>
+    <div class="bank-float bank-8">💵</div>
+    <div class="bank-float bank-9">🏧</div>
+    <div class="bank-float bank-10">📈</div>
+    <div class="bank-float bank-11">₹</div>
+    <div class="bank-float bank-12">💰</div>
+
+    <!-- Decorative banking circles -->
+    <div class="bank-circle circle-one"></div>
+    <div class="bank-circle circle-two"></div>
+    <div class="bank-circle circle-three"></div>
+
+</div>
+    <section class="details-hero">
+
+    <div class="details-icon">
+        💰
+    </div>
+
+    <h1>
+        Savings Account
+    </h1>
+
+    <p>
+        A simple and convenient banking solution to help
+        customers save, manage and access their money.
+    </p>
+
+</section>
+
+
+<main class="details-container">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="details-intro">
+
+        <h2>
+            About Savings Account
+        </h2>
+
+        <p>
+
+            A savings account is a basic banking facility designed
+            to help customers safely deposit their money, develop
+            regular saving habits and manage their everyday financial
+            requirements. It provides convenient access to account
+            services while helping customers maintain their savings
+            in an organized manner.
+
+        </p>
+
+    </section>
+
+
+    <!-- INFORMATION GRID -->
+
+    <section class="info-grid">
+
+
+        <!-- KEY FEATURES -->
+
+        <div class="info-card">
+
+            <h3>
+                Key Features
+            </h3>
+
+            <ul>
+
+                <li>
+                    Convenient account management
+                </li>
+
+                <li>
+                    Suitable for regular personal savings
+                </li>
+
+                <li>
+                    Easy access to account information
+                </li>
+
+                <li>
+                    Supports regular banking transactions
+                </li>
+
+                <li>
+                    Helps maintain organized financial records
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- BENEFITS -->
+
+        <div class="info-card">
+
+            <h3>
+                Benefits
+            </h3>
+
+            <ul>
+
+                <li>
+                    Encourages regular saving habits
+                </li>
+
+                <li>
+                    Helps customers manage their money
+                </li>
+
+                <li>
+                    Convenient for everyday banking needs
+                </li>
+
+                <li>
+                    Helps organize personal finances
+                </li>
+
+                <li>
+                    Provides access to applicable banking facilities
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- PURPOSE -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Purpose of a Savings Account
+        </h3>
+
+        <p>
+
+            A savings account can be used to keep money safely,
+            build regular savings and manage day-to-day financial
+            requirements. It can also help customers keep track
+            of their deposits, withdrawals and other eligible
+            account transactions.
+
+        </p>
+
+    </section>
+
+
+    <!-- ACCOUNT USAGE -->
+
+    <section class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+                Everyday Banking
+            </h3>
+
+            <ul>
+
+                <li>
+                    Deposit money into the account
+                </li>
+
+                <li>
+                    Withdraw funds when required
+                </li>
+
+                <li>
+                    Review account transactions
+                </li>
+
+                <li>
+                    Maintain personal financial records
+                </li>
+
+                <li>
+                    Access applicable banking services
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Saving Habits
+            </h3>
+
+            <ul>
+
+                <li>
+                    Encourages regular saving
+                </li>
+
+                <li>
+                    Helps plan personal finances
+                </li>
+
+                <li>
+                    Supports disciplined money management
+                </li>
+
+                <li>
+                    Helps maintain funds for future needs
+                </li>
+
+                <li>
+                    Makes personal savings easier to organize
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ELIGIBILITY -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Who Can Open a Savings Account?
+        </h3>
+
+        <p>
+
+            Individuals and other eligible customers who wish to
+            maintain personal savings and use applicable banking
+            facilities may open a savings account, subject to the
+            bank's account-opening requirements and applicable
+            eligibility conditions.
+
+        </p>
+
+    </section>
+
+
+    <!-- DOCUMENTS -->
+
+    <section class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+                Documents Required
+            </h3>
+
+            <ul>
+
+                <li>
+                    Valid identity proof
+                </li>
+
+                <li>
+                    Address proof
+                </li>
+
+                <li>
+                    Required photographs
+                </li>
+
+                <li>
+                    Customer identification details
+                </li>
+
+                <li>
+                    Other documents as required by the bank
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Account Management
+            </h3>
+
+            <ul>
+
+                <li>
+                    Regular monitoring of account activity
+                </li>
+
+                <li>
+                    Maintaining sufficient account balance
+                </li>
+
+                <li>
+                    Reviewing transaction records
+                </li>
+
+                <li>
+                    Keeping account information updated
+                </li>
+
+                <li>
+                    Using applicable banking channels
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- DIGITAL ACCESS -->
+
+    <section class="details-intro">
+
+        <h2>
+            Convenient Banking Access
+        </h2>
+
+        <p>
+
+            Depending on the facilities provided by the bank,
+            savings account customers may be able to access
+            selected banking services through branch and supported
+            digital channels. These facilities can make account
+            management, transaction checking and other routine
+            banking activities more convenient.
+
+        </p>
+
+    </section>
+
+
+    <!-- SUITABLE FOR -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Suitable For
+        </h3>
+
+        <p>
+
+            A savings account is suitable for individuals who want
+            to save money, manage everyday financial requirements,
+            maintain an organized account and access applicable
+            banking facilities according to their needs.
+
+        </p>
+
+    </section>
+
+
+    <!-- IMPORTANT INFORMATION -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Important Information
+        </h3>
+
+        <p>
+
+            Account-opening requirements, minimum balance conditions,
+            interest rates, charges, transaction limits, facilities
+            and other terms may vary according to the type of account
+            and the bank's applicable policies. Customers should
+            confirm the current details with the bank.
+
+        </p>
+
+    </section>
+
+
+    <!-- PROJECT INFORMATION -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Project Information
+        </h3>
+
+        <p>
+
+            This webpage is created as part of an educational
+            banking website project. The information presented
+            is for demonstration purposes and does not represent
+            an actual banking product, offer or contractual
+            commitment by the bank.
+
+        </p>
+
+    </section>
+
+
+      
+
+<a href="{{ url_for('home') }}?from=page#services" class="back-btn">
+    ← Back to Services
+</a>
+
+
+
+</main>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            includedLanguages: 'en,kn,hi',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element'
+    );
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-logo">
+
+            <div class="bank-logo">AS</div>
+
+            <div>
+                <h3>Anish Souharda</h3>
+                <p>Cooperative Bank</p>
+            </div>
+
+        </div>
+
+        <p>
+            Banking with trust, simplicity and care.
+        </p>
+         <div class="social-icons"> 
+
+    <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" class="instagram" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" class="youtube" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+</div> 
+    </div>
+
+
+    <div class="footer-links">
+   <h4>Quick Links</h4>
+        <a href="{{ url_for('home') }}?from=page" >Home</a>
+        <a href="{{ url_for('home') }}?from=page#about">About</a>
+        <a href="{{ url_for('home') }}?from=page#services">Services</a>
+        <a href="{{ url_for('home') }}?from=page#contact">Contact</a>
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Services</h4>
+        <a href="{{ url_for('home') }}?from=page#services">Savings</a>
+        <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+        <a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+        <a href="{{ url_for('home') }}?from=page#services">Digital Banking</a>
+        <a href="{{ url_for('home') }}?from=page#faq-section">FAQ</a>
+     
+    </div>
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <h3>
+     @2026-  All rights Reserved
+    </h3>
+
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

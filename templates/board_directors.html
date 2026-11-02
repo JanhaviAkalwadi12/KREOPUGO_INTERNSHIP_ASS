@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board of Directors | Anish Souharda</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo-area">
+
+            <div class="bank-logo">
+                AS
+            </div>
+
+            <div>
+                <h2>Anish Souharda</h2>
+                <span><h3>Co-operative Society</h3></span>
+            </div>
+
+        </div>
+
+        <nav class="navbar">
+
+            <a href="{{ url_for('home') }}?from=page#home">Home</a>
+
+            <a href="{{ url_for('home') }}?from=page#about">About</a>
+
+            <a href="{{ url_for('home') }}?from=page#services">Services</a>
+
+            <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+
+            <a href="{{ url_for('home') }}?from=page#loan">Loans</a>
+
+            <a href="{{ url_for('home') }}?from=page#contact">Contacts</a>
+
+            <a href="{{ url_for('board_directors') }}">
+                Board of Directors
+            </a>
+
+            <a href="{{ url_for('gallery') }}">Gallery</a>
+
+            <li class="others-dropdown">
+
+                <a href="javascript:void(0);" onclick="toggleOthersMenu()">
+                    Others
+                </a>
+
+                <div class="others-menu" id="othersMenu">
+
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+
+                    <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+
+                </div>
+
+            </li>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= BOARD OF DIRECTORS ================= -->
+
+    <section class="directors-section">
+
+        <div class="section-title">
+
+            <span>OUR LEADERSHIP</span>
+
+            <h2>Board of Directors</h2>
+
+            <p>
+                Our directors provide leadership, guidance and
+                strategic direction for the bank.
+            </p>
+
+        </div>
+
+
+        <div class="director-container">
+
+            <!-- DIRECTORS LOADED FROM SUPABASE DATABASE -->
+
+            {% for director in directors %}
+
+            <div class="director-card">
+
+                <div class="director-image">
+
+                    {% if director.image_url %}
+
+                        <img src="{{ director.image_url }}"
+                             alt="{{ director.full_name or 'Board Director' }}"
+                             loading="lazy">
+
+                    {% else %}
+
+                        <img src="{{ url_for('static', filename='images/default-director.png') }}"
+                             alt="Director">
+
+                    {% endif %}
+
+                </div>
+
+
+                <div class="director-info">
+
+                    <h3>
+                        {{ director.full_name or ('Director ' ~ director.serial_number) }}
+                    </h3>
+
+                    <h4>
+                        {{ director.designation or 'Board Member' }}
+                    </h4>
+
+                    {% if director.phone %}
+
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        {{ director.phone }}
+                    </p>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="director-card">
+
+                <div class="director-info">
+
+                    <h3>Directors' Information</h3>
+
+                    <p>
+                        Director information is currently unavailable.
+                        Please visit again later.
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+        </div>
+        <!-- BACK TO HOME -->
+          <a href="{{ url_for('home') }}?from=page" class="back-btn">
+        ← Back to Home
+    </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-logo">
+
+                <div class="bank-logo">AS</div>
+
+                <div>
+                    <h3>Anish Souharda</h3>
+                    <p>Cooperative Bank</p>
+                </div>
+
+            </div>
+
+            <p>
+                Banking with trust, simplicity and care.
+            </p>
+
+            <div class="social-icons">
+
+                <a href="https://www.facebook.com/" class="facebook" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/" class="instagram" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/" class="youtube" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/" class="linkedin" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Quick Links</h4>
+
+            <a href="{{ url_for('home') }}">Home</a>
+
+            <a href="{{ url_for('home') }}#about">About</a>
+
+            <a href="{{ url_for('home') }}#services">Services</a>
+
+            <a href="{{ url_for('home') }}#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Services</h4>
+
+            <a href="{{ url_for('home') }}#services">Savings</a>
+
+            <a href="{{ url_for('home') }}#deposits">Deposits</a>
+
+            <a href="{{ url_for('home') }}#loan">Loans</a>
+
+            <a href="{{ url_for('home') }}#services">Digital Banking</a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="copyright">
+
+        <h3>
+            @2026 - All rights Reserved
+        </h3>
+
+    </div>
+
+
+    <!-- ================= GOOGLE TRANSLATE ================= -->
+
+    <script>
+
+        function googleTranslateElementInit() {
+
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,kn,hi',
+                    layout: google.translate.TranslateElement.Inline
+                },
+                'google_translate_element'
+            );
+
+        }
+
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- JAVASCRIPT -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

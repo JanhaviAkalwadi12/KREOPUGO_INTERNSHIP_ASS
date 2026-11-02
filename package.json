@@ -1,0 +1,21 @@
+{
+  "name": "file-struct-anish",
+  "displayName": "File Struct(Anish)",
+  "version": "1.0.0",
+  "description": "Anish Souharda Cooperative Bank - Finalized Student Project",
+  "main": "api/index.py",
+  "scripts": {
+    "start": "python app.py",
+    "dev": "vercel dev",
+    "build": "echo 'No build required for Python Flask'"
+  },
+  "keywords": [
+    "anish-bank",
+    "anish-souharda-cooperative-bank",
+    "flask",
+    "supabase",
+    "vercel"
+  ],
+  "author": "Anish",
+  "license": "ISC"
+}

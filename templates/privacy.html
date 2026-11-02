@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- External link of css -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}">
+     
+
+     <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+       
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 35px 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.container h2 {
+    color: #0f766e;
+    font-size: 21px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.container h2:first-child {
+    margin-top: 0;
+}
+
+.container p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #3d4655;
+}
+
+.container ul {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.container li {
+    margin-bottom: 8px;
+    color: #3d4655;
+}
+    </style>
+</head>
+<body>
+    <!-- ================= NAVIGATION ================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="bank-logo">
+            AS
+        </div>
+
+        <div>
+            <h2>Anish Souharda</h2>
+            <span><h3> Co-operative Society</h3 ></span>
+        </div>
+
+    </div>
+
+    <nav class="navbar">
+     
+<a href="{{ url_for('home') }}?from=page#home">Home</a>
+<a href="{{ url_for('home') }}?from=page#about">About</a>
+<a href="{{ url_for('home') }}?from=page#services">Services</a>
+<a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+<a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+<a href="{{ url_for('home') }}?from=page#contact">Contacts</a>
+<a href="{{ url_for('board_directors') }}?from=page#board_directors">Board of Directors</a>
+<a href="{{ url_for('gallery') }}?from=page#gallery">Gallery</a>
+      <li class="others-dropdown" >
+    <a href="javascript:void(0);" onclick="toggleOthersMenu()">Others </a>
+
+    <div class="others-menu" id="othersMenu">
+      <a href="{{ url_for('privacy') }}?from=page#privacy">Privacy and Policy</a>
+      <a href="{{ url_for('terms') }}?from=page#terms">Terms and Conditions</a>
+    </div>
+</li>
+      
+        
+
+        
+</nav>
+   
+        </div>
+
+    <!-- <button class="menu-btn" onclick="toggleMenu()">☰</button> -->
+    <!--  TRANSLATE-->
+</header>
+<div style="background-color: #0f766e; height: 150px;font-size: 25px; justify-content: center; align-items: center; " align="center">
+        <h1>Privacy Policy</h1>
+        <p>Your Privacy Matters to Us</p>
+
+    </div>
+
+    <div class="container">
+
+        <h2>1. Introduction</h2>
+        <p>
+            We respect your privacy and are committed to protecting the personal
+            information you provide while using our website and services.
+        </p>
+
+        <h2>2. Information We Collect</h2>
+        <p>We may collect information such as:</p>
+
+        <ul>
+            <li>Name and contact information</li>
+            <li>Email address and phone number</li>
+            <li>Information submitted through contact forms</li>
+            <li>Information required to provide banking-related services</li>
+        </ul>
+
+        <h2>3. Use of Information</h2>
+        <p>
+            The information collected may be used to respond to enquiries,
+            provide requested services, improve our website, and communicate
+            important information to users.
+        </p>
+
+        <h2>4. Data Protection</h2>
+        <p>
+            We take reasonable measures to protect user information from
+            unauthorized access, alteration, disclosure, or misuse.
+        </p>
+
+        <h2>5. Third-Party Services</h2>
+        <p>
+            Our website may use third-party services or links. We are not
+            responsible for the privacy practices of external websites.
+            Users are encouraged to review their respective privacy policies.
+        </p>
+
+        <h2>6. Cookies</h2>
+        <p>
+            Our website may use cookies or similar technologies to improve
+            website functionality and user experience.
+        </p>
+
+        <h2>7. Changes to This Policy</h2>
+        <p>
+            We may update this Privacy Policy from time to time. Any changes
+            will be reflected on this page.
+        </p>
+
+        <h2>8. Contact Us</h2>
+        <p>
+            If you have questions regarding this Privacy Policy, please contact
+            us through the contact details provided on our website.
+        </p>
+
+         
+<a href="{{ url_for('home') }}?from=page" class="back-btn">← Back to Home</a>
+
+
+    </div>
+
+    </section>
+    <footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-logo">
+
+            <div class="bank-logo">AS</div>
+
+            <div>
+                <h3>Anish Souharda</h3>
+                <p>Cooperative Bank</p>
+            </div>
+
+        </div>
+
+        <p>
+            Banking with trust, simplicity and care.
+        </p>
+         <div class="social-icons"> 
+
+    <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" class="instagram" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" class="youtube" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+</div> 
+    </div>
+
+
+    <div class="footer-links">
+   <h4>Quick Links</h4>
+        <a href="{{ url_for('home') }}?from=page" >Home</a>
+        <a href="{{ url_for('home') }}?from=page#about">About</a>
+        <a href="{{ url_for('home') }}?from=page#services">Services</a>
+        <a href="{{ url_for('home') }}?from=page#contact">Contact</a>
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Services</h4>
+        <a href="{{ url_for('home') }}?from=page#services">Savings</a>
+        <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+        <a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+        <a href="{{ url_for('home') }}?from=page#services">Digital Banking</a>
+        <a href="{{ url_for('home') }}?from=page#faq-section">FAQ</a>
+     
+    </div>
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <h3>
+     @2026-  All rights Reserved
+    </h3>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #114e8b, #075985, #0f766e);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.success-container {
+    width: 100%;
+    max-width: 650px;
+}
+
+.success-card {
+    background: #ffffff;
+    padding: 45px 40px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    animation: appear 0.7s ease;
+}
+
+.success-icon {
+    width: 85px;
+    height: 85px;
+    background: #dcfce7;
+    color: #15803d;
+    border: 4px solid #86efac;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+h1 {
+    color: #114e8b;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    color: #0f766e;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.main-message {
+    color: #334155;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.thank-message {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.details-box {
+    background: #f0fdfa;
+    border: 1px solid #ccfbf1;
+    border-radius: 14px;
+    padding: 22px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.details-box h3 {
+    color: #075985;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.details-box p {
+    color: #334155;
+    font-size: 14px;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+.details-box strong {
+    color: #114e8b;
+}
+
+.footer-message {
+    color: #0f766e;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.home-btn {
+    display: inline-block;
+    background: #114e8b;
+    color: white;
+    padding: 13px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #0f766e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(15, 118, 110, 0.25);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .success-card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+
+    .details-box {
+        padding: 16px;
+    }
+}

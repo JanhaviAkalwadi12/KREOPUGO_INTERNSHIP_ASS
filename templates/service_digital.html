@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+     <header class="header">
+
+    <div class="logo-area">
+
+        <div class="bank-logo">
+            AS
+        </div>
+
+        <div>
+
+            <h2>Anish Souharda</h2>
+
+            <span>
+                 <h3>Co-operative Bank </h3>
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navbar">
+   
+<a href="{{ url_for('home') }}?from=page#home">Home</a>
+<a href="{{ url_for('home') }}?from=page#about">About</a>
+<a href="{{ url_for('home') }}?from=page#services">Services</a>
+<a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+<a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+<a href="{{ url_for('home') }}?from=page#contact">Contacts</a>
+<a href="{{ url_for('board_directors') }}?from=page#board_directors">Board of Directors</a>
+<a href="{{ url_for('gallery') }}?from=page#gallery">Gallery</a>
+    <li class="others-dropdown" >
+    <a href="javascript:void(0);" onclick="toggleOthersMenu()">Others </a>
+
+    <div class="others-menu" id="othersMenu">
+      <a href="{{ url_for('privacy') }}?from=page#privacy">Privacy and Policy</a>
+      <a href="{{ url_for('terms') }}?from=page#terms">Terms and Conditions</a>
+    </div>
+</li>
+       
+        
+    </nav>
+    
+ 
+</header>
+<!-- ================= ANIMATED BANKING BACKGROUND ================= -->
+
+<div class="bank-animation-bg" aria-hidden="true">
+
+    <!-- Soft glowing circles -->
+    <div class="bank-glow glow-one"></div>
+    <div class="bank-glow glow-two"></div>
+    <div class="bank-glow glow-three"></div>
+
+    <!-- Floating banking icons -->
+    <div class="bank-float bank-1">₹</div>
+    <div class="bank-float bank-2">🪙</div>
+    <div class="bank-float bank-3">💰</div>
+    <div class="bank-float bank-4">🏦</div>
+    <div class="bank-float bank-5">💳</div>
+    <div class="bank-float bank-6">₹</div>
+    <div class="bank-float bank-7">🪙</div>
+    <div class="bank-float bank-8">💵</div>
+    <div class="bank-float bank-9">🏧</div>
+    <div class="bank-float bank-10">📈</div>
+    <div class="bank-float bank-11">₹</div>
+    <div class="bank-float bank-12">💰</div>
+
+    <!-- Decorative banking circles -->
+    <div class="bank-circle circle-one"></div>
+    <div class="bank-circle circle-two"></div>
+    <div class="bank-circle circle-three"></div>
+
+</div>
+    <section class="details-hero">
+
+    <div class="details-icon">
+        📱
+    </div>
+
+    <h1>
+        Digital Banking
+    </h1>
+
+    <p>
+        Convenient and secure access to banking services
+        through supported digital channels.
+    </p>
+
+</section>
+
+
+<main class="details-container">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="details-intro">
+
+        <h2>
+            About Digital Banking
+        </h2>
+
+        <p>
+
+            Digital banking allows customers to access selected
+            banking services through electronic and online channels.
+            It provides a convenient way to manage accounts, check
+            transaction information and perform eligible banking
+            activities without always having to visit a branch.
+
+        </p>
+
+    </section>
+
+
+    <!-- INFORMATION GRID -->
+
+    <section class="info-grid">
+
+
+        <!-- KEY FEATURES -->
+
+        <div class="info-card">
+
+            <h3>
+                Key Features
+            </h3>
+
+            <ul>
+
+                <li>
+                    Convenient access to selected banking services
+                </li>
+
+                <li>
+                    Access to account information through digital channels
+                </li>
+
+                <li>
+                    Helps customers monitor transactions
+                </li>
+
+                <li>
+                    Supports eligible online banking activities
+                </li>
+
+                <li>
+                    Available through supported electronic channels
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- BENEFITS -->
+
+        <div class="info-card">
+
+            <h3>
+                Benefits
+            </h3>
+
+            <ul>
+
+                <li>
+                    Reduces the need for frequent branch visits
+                </li>
+
+                <li>
+                    Saves time for routine banking activities
+                </li>
+
+                <li>
+                    Provides convenient access to account information
+                </li>
+
+                <li>
+                    Makes everyday banking more accessible
+                </li>
+
+                <li>
+                    Supports modern banking habits
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- DIGITAL SERVICES -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Digital Banking Services
+        </h3>
+
+        <p>
+
+            Depending on the facilities offered by the bank,
+            customers may be able to access services such as
+            account balance checking, transaction history,
+            fund transfers, bill payments, account statements
+            and other eligible banking facilities through
+            supported digital channels.
+
+        </p>
+
+    </section>
+
+
+    <!-- SERVICES GRID -->
+
+    <section class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+                Account Services
+            </h3>
+
+            <ul>
+
+                <li>
+                    Check available account information
+                </li>
+
+                <li>
+                    View transaction history
+                </li>
+
+                <li>
+                    Access account statements
+                </li>
+
+                <li>
+                    Monitor deposits and withdrawals
+                </li>
+
+                <li>
+                    Manage eligible account services
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Online Transactions
+            </h3>
+
+            <ul>
+
+                <li>
+                    Make eligible fund transfers
+                </li>
+
+                <li>
+                    Manage selected online payments
+                </li>
+
+                <li>
+                    Access supported payment services
+                </li>
+
+                <li>
+                    Review transaction details
+                </li>
+
+                <li>
+                    Receive applicable transaction notifications
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- CONVENIENCE -->
+
+    <section class="details-intro">
+
+        <h2>
+            Banking at Your Convenience
+        </h2>
+
+        <p>
+
+            Digital banking makes routine banking activities
+            more convenient by providing access through supported
+            electronic channels. Customers can manage many
+            everyday banking requirements from their preferred
+            location, subject to the services and facilities
+            provided by the bank.
+
+        </p>
+
+    </section>
+
+
+    <!-- SECURITY -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Safe and Secure Banking
+        </h3>
+
+        <p>
+
+            Customers should use only official banking applications,
+            websites and other authorized channels when accessing
+            digital banking services. Login details, passwords,
+            PINs, OTPs and other confidential banking information
+            should be kept private and should never be shared with
+            other people.
+
+        </p>
+
+    </section>
+
+
+    <!-- ELIGIBILITY -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Who Can Use Digital Banking?
+        </h3>
+
+        <p>
+
+            Customers who maintain eligible accounts and meet
+            the applicable requirements of the bank may use
+            supported digital banking services. Availability
+            of individual facilities may depend on account type,
+            registration and other applicable conditions.
+
+        </p>
+
+    </section>
+
+
+    <!-- REQUIREMENTS -->
+
+    <section class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+                Basic Requirements
+            </h3>
+
+            <ul>
+
+                <li>
+                    Eligible bank account
+                </li>
+
+                <li>
+                    Registered customer information
+                </li>
+
+                <li>
+                    Registered mobile number where applicable
+                </li>
+
+                <li>
+                    Suitable device and internet connection
+                </li>
+
+                <li>
+                    Registration for applicable digital services
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Customer Responsibilities
+            </h3>
+
+            <ul>
+
+                <li>
+                    Keep login information confidential
+                </li>
+
+                <li>
+                    Use official banking channels
+                </li>
+
+                <li>
+                    Check transaction details regularly
+                </li>
+
+                <li>
+                    Report suspicious activity promptly
+                </li>
+
+                <li>
+                    Follow applicable banking security guidelines
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ADVANTAGES -->
+
+    <section class="details-intro">
+
+        <h2>
+            Advantages of Digital Banking
+        </h2>
+
+        <p>
+
+            Digital banking can make routine financial activities
+            faster and more convenient. It provides customers
+            with easier access to account information and selected
+            banking services while reducing dependence on branch
+            visits for certain everyday requirements.
+
+        </p>
+
+    </section>
+
+
+    <!-- IMPORTANT INFORMATION -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Important Information
+        </h3>
+
+        <p>
+
+            Availability of digital banking services, transaction
+            limits, charges, authentication methods, service
+            timings and other conditions may vary according to
+            the bank and the type of service. Customers should
+            use only authorized banking channels and confirm
+            the current service details with the bank.
+
+        </p>
+
+    </section>
+
+
+    <!-- PROJECT INFORMATION -->
+
+    <section class="highlight-box">
+
+        <h3>
+            Project Information
+        </h3>
+
+        <p>
+
+            This webpage is created as part of an educational
+            banking website project. The information presented
+            is for demonstration purposes and does not represent
+            an actual banking service, offer or contractual
+            commitment by the bank.
+
+        </p>
+
+    </section>
+
+      
+<a href="{{ url_for('home') }}?from=page#services" class="back-btn">
+    ← Back to Services
+</a>
+
+
+</main>
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-logo">
+
+            <div class="bank-logo">AS</div>
+
+            <div>
+                <h3>Anish Souharda</h3>
+                <p>Cooperative Bank</p>
+            </div>
+
+        </div>
+
+        <p>
+            Banking with trust, simplicity and care.
+        </p>
+         <div class="social-icons"> 
+
+    <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" class="instagram" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" class="youtube" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+</div> 
+    </div>
+
+
+   <div class="footer-links">
+   <h4>Quick Links</h4>
+        <a href="{{ url_for('home') }}?from=page" >Home</a>
+        <a href="{{ url_for('home') }}?from=page#about">About</a>
+        <a href="{{ url_for('home') }}?from=page#services">Services</a>
+        <a href="{{ url_for('home') }}?from=page#contact">Contact</a>
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Services</h4>
+        <a href="{{ url_for('home') }}?from=page#services">Savings</a>
+        <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+        <a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+        <a href="{{ url_for('home') }}?from=page#services">Digital Banking</a>
+        <a href="{{ url_for('home') }}?from=page#faq-section">FAQ</a>
+     
+    </div>
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <h3>
+     @2026-  All rights Reserved
+    </h3>
+
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

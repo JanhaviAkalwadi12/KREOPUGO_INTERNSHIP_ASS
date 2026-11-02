@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Sign In | Anish Souharda</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+
+<body class="login-page">
+
+    <main class="login-layout">
+
+        <!-- BRAND SECTION -->
+        <section class="login-brand"
+                 aria-label="Anish Souharda administration">
+
+            <div class="brand-mark">AS</div>
+
+            <p class="eyebrow">ANISH SOUHARDA</p>
+
+            <h1>
+                Website<br>
+                <span>Administration</span>
+            </h1>
+
+            <p class="brand-copy">
+                Manage website content, announcements and customer
+                engagement from one secure workspace.
+            </p>
+
+            <div class="login-trust">
+                <span>●</span> Protected admin access
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN FORM SECTION -->
+        <section class="login-card">
+
+            <p class="eyebrow">WELCOME BACK</p>
+
+            <h2>Sign in to your account</h2>
+
+            <p class="muted">
+                Use your authorised administrator credentials.
+            </p>
+
+          
+
+
+            <!-- LOGIN FORM -->
+       
+          <form method="post"
+            action="{{ url_for('admin_dashboard') }}" 
+            class="login-form">
+            <!-- ERROR MESSAGE -->
+            {% if error %}
+            <div class="form-alert" role="alert">
+                {{ error }}
+            </div>
+            {% endif %}
+            <!-- USERNAME -->
+            <label for="username">Username</label>
+
+            <input
+                id="username"
+                name="username"
+                type="text"
+                autocomplete="username"
+                required
+                maxlength="100"
+                autofocus
+              >
+
+               <!-- PASSWORD -->
+              <label for="password">Password</label>
+
+              <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                  maxlength="200"
+              >
+
+              <!-- SIGN IN BUTTON -->
+              <button class="btn btn-primary btn-full" type="submit" >
+                Sign in securely
+                <span aria-hidden="true">→</span>
+              </button>
+
+          </form>
+
+
+            <!-- SECURITY MESSAGE -->
+            <p class="login-footnote">
+                <span aria-hidden="true">🔒</span>
+                Your session is protected. Do not share admin credentials.
+            </p>
+
+        </section>
+
+    </main>
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
+</body>
+
+</html>

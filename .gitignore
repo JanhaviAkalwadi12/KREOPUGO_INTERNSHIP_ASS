@@ -1,0 +1,24 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment variables & local configuration
+.env
+.env.local
+.env.*.local
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Vercel deployment cache and artifacts
+.vercel/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini

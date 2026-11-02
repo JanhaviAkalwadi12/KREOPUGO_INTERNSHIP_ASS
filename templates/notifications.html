@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications | Anish Souharda Cooperative Bank</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/stylesheet4.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0fdfa;
+            color: #1e293b;
+        }
+
+        .notification-page {
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* HEADER */
+
+        .page-header {
+            background: linear-gradient(120deg, #114e8b, #075985, #0f766e);
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .bank-name {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .bank-tagline {
+            font-size: 11px;
+            opacity: 0.85;
+            margin-top: 3px;
+        }
+
+        .home-button {
+            color: #114e8b;
+            background: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .home-button:hover {
+            background: #f0fdfa;
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+
+        .notification-hero {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .hero-icon {
+            width: 75px;
+            height: 75px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto auto 18px;
+            font-size: 35px;
+            box-shadow: 0 5px 20px rgba(17, 78, 139, 0.12);
+        }
+
+        .notification-hero h1 {
+            color: #114e8b;
+            font-size: clamp(26px, 4vw, 38px);
+            font-weight: 800;
+        }
+
+        .notification-hero p {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .notification-count {
+            display: inline-block;
+            margin-top: 18px;
+            background: #d1fae5;
+            color: #0f766e;
+            padding: 7px 17px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* NOTIFICATION AREA */
+
+        .notification-wrapper {
+            width: 88%;
+            max-width: 1050px;
+            margin: 15px auto;
+        }
+
+        .section-title {
+            color: #114e8b;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #notificationContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .notification-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #dbeafe;
+            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+            transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notification-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #114e8b, #0f766e);
+        }
+
+        .notification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(17, 78, 139, 0.12);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 17px;
+        }
+
+        .card-icon {
+            width: 42px;
+            height: 42px;
+            background: #eff6ff;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 21px;
+        }
+
+        .category-label {
+            background: #ecfdf5;
+            color: #0f766e;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .notification-card h3 {
+            color: #114e8b;
+            font-size: 17px;
+            margin-bottom: 10px;
+            overflow-wrap: anywhere;
+        }
+
+        .notification-card .message {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .card-actions a {
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .pdf-button {
+            background: #114e8b;
+            color: white;
+        }
+
+        .pdf-button:hover {
+            background: #075985;
+        }
+
+        .read-button {
+            background: #ccfbf1;
+            color: #0f766e;
+        }
+
+        .read-button:hover {
+            background: #99f6e4;
+        }
+
+        /* LOADING AND EMPTY STATES */
+
+        .status-message {
+            grid-column: 1 / -1;
+            background: white;
+            border-radius: 15px;
+            padding: 35px 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .empty-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        /* FOOTER */
+
+        .page-footer {
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+            background: white;
+            border-top: 1px solid #dbeafe;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .page-footer strong {
+            color: #114e8b;
+        }
+
+        @media (max-width: 600px) {
+            .page-header {
+                padding: 18px 5%;
+            }
+
+            .bank-name {
+                font-size: 16px;
+            }
+
+            .notification-hero {
+                padding-top: 40px;
+            }
+
+            .notification-wrapper {
+                width: 90%;
+            }
+
+            #notificationContainer {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<!-- ================= NAVIGATION ================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="bank-logo">
+            AS
+        </div>
+
+        <div>
+            <h2>Anish Souharda</h2>
+            <span><h3>Co-operative Society</h3></span>
+        </div>
+
+    </div>
+
+    <nav class="navbar">
+
+        <a href="{{ url_for('home') }}?from=page#home">Home</a>
+        <a href="{{ url_for('home') }}?from=page#about">About</a>
+        <a href="{{ url_for('home') }}?from=page#services">Services</a>
+        <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+        <a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+        <a href="{{ url_for('home') }}?from=page#contact">Contacts</a>
+
+        <a href="{{ url_for('board_directors') }}?from=page#board_directors">
+            Board of Directors
+        </a>
+
+        <a href="{{ url_for('gallery') }}">Gallery</a>
+
+        <li class="others-dropdown">
+
+            <a href="javascript:void(0);" onclick="toggleOthersMenu()">
+                Others
+            </a>
+
+            <div class="others-menu" id="othersMenu">
+
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+
+            </div>
+
+        </li>
+         <a href="{{ url_for('home') }}?from=page#home" class="home-button">← Back to Home</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- <div class="notification-page"> -->
+
+    <!-- HEADER -->
+    <!-- <header class="page-header">
+        <div>
+            <div class="bank-name">ANISH SOUHARDA</div>
+            <div class="bank-tagline">
+                Cooperative Bank | Banking with Trust
+            </div>
+        </div>
+
+        <a href="{{ url_for('home') }}?from=page#home" class="home-button">← Back to Home</a>
+    </header> -->
+
+
+    <!-- HERO SECTION -->
+    <section class="notification-hero">
+
+        <div class="hero-icon">🔔</div>
+
+        <h1>Stay Updated With Us</h1>
+
+        <p>
+            Get the latest bank announcements, offers, festival wishes
+            and important updates in one place.
+        </p>
+
+        <div class="notification-count" id="notificationCount">
+            Loading notifications...
+        </div>
+
+    </section>
+
+
+    <!-- ALL NOTIFICATIONS -->
+    <main class="notification-wrapper">
+
+        <h2 class="section-title">
+            ✨ Latest Updates
+        </h2>
+
+        <div id="notificationContainer">
+
+            <div class="status-message">
+                Loading the latest notifications...
+            </div>
+
+        </div>
+
+    </main>
+
+
+</div>
+
+<!-- ================= CO-OP ASSIST CHATBOT ================= -->
+
+<div class="chatbot-container">
+
+    <!-- Chat Button -->
+
+    <button class="chatbot-button"
+            onclick="toggleChat()"
+            aria-label="Open banking assistant">
+
+        💬
+
+    </button>
+
+
+    <!-- Chat Box -->
+
+    <div class="chatbot-box" id="chatbotBox">
+
+        <!-- Header -->
+
+        <div class="chatbot-header">
+
+            <div>
+                <h3>Co-op Assist</h3>
+                <span>Your Banking Guide</span>
+            </div>
+
+            <button onclick="toggleChat()" aria-label="Close chat">
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Messages -->
+
+        <div class="chatbot-messages" id="chatMessages">
+
+            <div class="bot-message">
+
+                👋 Hello! I'm <b>Co-op Assist</b>.<br>
+
+                Your Banking Guide.<br><br>
+
+                Select a question below to get quick banking information.
+
+            </div>
+
+        </div>
+
+
+        <!-- Questions -->
+
+        <div class="chatbot-questions">
+
+            <button onclick="askQuestion('fd')">
+                What is an FD?
+            </button>
+
+            <button onclick="askQuestion('rd')">
+                What is an RD?
+            </button>
+
+            <button onclick="askQuestion('emi')">
+                How does EMI work?
+            </button>
+
+            <button onclick="askQuestion('documents')">
+                Documents required for a loan?
+            </button>
+
+            <button onclick="askQuestion('hours')">
+                What are the banking hours?
+            </button>
+
+            <button onclick="askQuestion('contact')">
+                How can I contact the bank?
+            </button>
+
+            <button onclick="askQuestion('accounts')">
+                What types of accounts are available?
+            </button>
+
+            <button onclick="askQuestion('loan')">
+                How do I apply for a loan?
+            </button>
+
+            <button onclick="askQuestion('fraud')">
+                What should I do if I suspect fraud?
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-logo">
+
+            <div class="bank-logo">AS</div>
+
+            <div>
+                <h3>Anish Souharda</h3>
+                <p>Cooperative Bank</p>
+            </div>
+
+        </div>
+
+        <p>
+            Banking with trust, simplicity and care.
+        </p>
+         <div class="social-icons"> 
+
+    <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" class="instagram" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" class="youtube" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+</div> 
+    </div>
+
+
+    <div class="footer-links">
+   <h4>Quick Links</h4>
+        <a href="{{ url_for('home') }}?from=page" >Home</a>
+        <a href="{{ url_for('home') }}?from=page#about">About</a>
+        <a href="{{ url_for('home') }}?from=page#services">Services</a>
+        <a href="{{ url_for('home') }}?from=page#contact">Contact</a>
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Services</h4>
+        <a href="{{ url_for('home') }}?from=page#services">Savings</a>
+        <a href="{{ url_for('home') }}?from=page#deposits">Deposits</a>
+        <a href="{{ url_for('home') }}?from=page#loans">Loans</a>
+        <a href="{{ url_for('home') }}?from=page#services">Digital Banking</a>
+        <a href="{{ url_for('home') }}?from=page#faq-section">FAQ</a>
+     
+    </div>
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+
+    <h3>
+     @2026-  All rights Reserved
+    </h3>
+
+</div>
+
+
+
+
+
+
+
+<script>
+async function loadAllNotifications() {
+
+    const container = document.getElementById("notificationContainer");
+    const count = document.getElementById("notificationCount");
+
+    try {
+
+        const response = await fetch("/api/header-notifications");
+        const data = await response.json();
+
+        container.innerHTML = "";
+
+        if (!response.ok || !data.success) {
+            throw new Error("Unable to load notifications");
+        }
+
+        const notifications = data.notifications || [];
+
+        count.textContent = notifications.length +
+            (notifications.length === 1
+                ? " Notification Available"
+                : " Notifications Available");
+
+        if (notifications.length === 0) {
+
+            container.innerHTML = `
+                <div class="status-message">
+                    <div class="empty-icon">📭</div>
+                    <h3>No Notifications Available</h3>
+                    <p>There are no new updates at the moment. Please visit again!</p>
+                </div>
+            `;
+
+            return;
+        }
+
+        notifications.forEach(function(notification) {
+
+            const card = document.createElement("article");
+            card.className = "notification-card";
+
+            const top = document.createElement("div");
+            top.className = "card-top";
+
+            const icon = document.createElement("div");
+            icon.className = "card-icon";
+            icon.textContent = "📢";
+
+            const category = document.createElement("span");
+            category.className = "category-label";
+            category.textContent = notification.category || "Bank Update";
+
+            top.appendChild(icon);
+            top.appendChild(category);
+
+            const title = document.createElement("h3");
+            title.textContent = notification.title || "Bank Notification";
+
+            const message = document.createElement("p");
+            message.className = "message";
+            message.textContent = notification.message || "";
+
+            const actions = document.createElement("div");
+            actions.className = "card-actions";
+
+            if (notification.pdf_url) {
+
+                const pdfLink = document.createElement("a");
+                pdfLink.href = notification.pdf_url;
+                pdfLink.target = "_blank";
+                pdfLink.rel = "noopener noreferrer";
+                pdfLink.className = "pdf-button";
+                pdfLink.textContent = "📄 View PDF";
+
+                actions.appendChild(pdfLink);
+            }
+
+            if (notification.link_url) {
+
+                const readLink = document.createElement("a");
+                readLink.href = notification.link_url;
+                readLink.target = "_blank";
+                readLink.rel = "noopener noreferrer";
+                readLink.className = "read-button";
+                readLink.textContent = "Read More →";
+
+                actions.appendChild(readLink);
+            }
+
+            card.appendChild(top);
+            card.appendChild(title);
+            card.appendChild(message);
+
+            if (actions.children.length > 0) {
+                card.appendChild(actions);
+            }
+
+            container.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        count.textContent = "Notifications unavailable";
+
+        container.innerHTML = `
+            <div class="status-message">
+                <div class="empty-icon">⚠️</div>
+                <h3>Unable to Load Notifications</h3>
+                <p>Please refresh the page and try again.</p>
+            </div>
+        `;
+
+        console.log(error);
+    }
+}
+
+loadAllNotifications();
+</script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>
